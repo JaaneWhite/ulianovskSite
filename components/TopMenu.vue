@@ -3,7 +3,12 @@
     <b-navbar-toggle target="nav-collapse" class="burger-button"></b-navbar-toggle>
     <b-collapse id="nav-collapse" is-nav >
       <b-navbar-nav fill class="top-menu">
-        <b-nav-item href="#" class="top-menu-item">Путеводители</b-nav-item>
+        <b-nav-item-dropdown href="#" class="top-menu-item" text="Путеводители">
+
+          <b-dropdown-item href="#">Фонды досоветского периода</b-dropdown-item>
+          <b-dropdown-item href="#">Фонды советского периода</b-dropdown-item>
+
+        </b-nav-item-dropdown>
         <b-nav-item href="#" class="top-menu-item">Указатели</b-nav-item>
         <b-nav-item href="#" class="top-menu-item">Муниципальные архивы <br>
           Ульяновской области</b-nav-item>
@@ -23,7 +28,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   .top-menu-block {
     width: 100%;
     padding-right: 0;
@@ -32,21 +37,65 @@ export default {
     .top-menu {
       width: 100%;
       height: 50px;
+
       .top-menu-item {
         height: 100%;
-        a {
+        border: none;
+        box-shadow: none;
+        .nav-link {
           font-size: 15px;
           color: #474334;
           height: 100%;
           display: flex;
           align-items: center;
+          text-align: center;
 
           &:hover {
             font-size: 15px;
-            color: #474334;
+            color: white;
+            background-color: #9e0000;
+          }
+          &:focus {
+            border: none;
+            box-shadow: none;
+            outline: none;
+          }
+
+        }
+        &.show {
+          .nav-link {
+            color: white;
+            background-color: #9e0000;
+          }
+
+      }
+        .dropdown-toggle::after {
+          display: none;
+        }
+        .dropdown-menu {
+          border: none;
+          border-radius: 0;
+          background-color: #9e0000;
+          margin: 0;
+          position: fixed;
+          left: 0;
+          right: 0;
+          top: auto;
+          width: 100%;
+
+          .dropdown-item {
+            color: white;
+            font-size: 15px;
+            line-height: 1.733;
+            &:hover {
+              color: #daa3a3;
+              background-color: transparent;
+            }
+
+            }
           }
         }
       }
     }
-  }
+
 </style>
