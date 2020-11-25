@@ -5,8 +5,10 @@
       <b-navbar-nav fill class="top-menu">
         <b-nav-item-dropdown href="#" class="top-menu-item" text="Путеводители">
 
+          <b-container class="dropdown-menu-container">
           <b-dropdown-item href="#">Фонды досоветского периода</b-dropdown-item>
           <b-dropdown-item href="#">Фонды советского периода</b-dropdown-item>
+          </b-container>
 
         </b-nav-item-dropdown>
         <b-nav-item href="#" class="top-menu-item">Указатели</b-nav-item>
@@ -75,24 +77,29 @@ export default {
         .dropdown-menu {
           border: none;
           border-radius: 0;
-          background-color: #9e0000;
           margin: 0;
+          padding: 0;
           position: fixed;
           left: 0;
           right: 0;
           top: auto;
           width: 100%;
+          .dropdown-menu-container {
+            background-color: #9e0000;
+            padding: 0;
 
-          .dropdown-item {
-            color: white;
-            font-size: 15px;
-            line-height: 1.733;
-            &:hover {
-              color: #daa3a3;
-              background-color: transparent;
-            }
+            .dropdown-item {
+              color: white;
+              font-size: 15px;
+              line-height: 1.733;
+
+              &:hover {
+                color: #daa3a3;
+                background-color: transparent;
+              }
 
             }
+          }
           }
         }
       }
