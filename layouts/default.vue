@@ -1,62 +1,49 @@
 <template>
   <div>
+    <header-component />
     <Nuxt />
+    <footer-component />
   </div>
 </template>
 
-<style>
-html {
-  font-family:
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+<style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap');
+@media (min-width: 1500px) {
+  .container {
+    max-width: 1460px;
+  }
+}
+/* по умолчанию -  мобильная версия - 0 - 767 px*/
+@media (min-width: 0) {
+  body {
+    margin: auto;
+    font-family: 'Roboto', sans-serif;
+    color: #474334;
+  }
+  .row {
+    padding: 0;
+    margin: 0;
+  }
+  .container {
+    padding: 0;
+  }
+
+  a{
+    color: #474334;
+    &:hover {
+      color: #9e0000;
+    }
+
+  }
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-}
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
-}
 </style>
+<script>
+import HeaderComponent from "~/components/HeaderComponent";
+import FooterComponent from "~/components/FooterComponent";
+export default {
+  components: {FooterComponent, HeaderComponent}
+}
+</script>
