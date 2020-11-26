@@ -31,6 +31,16 @@ export default {
 </script>
 
 <style lang="scss">
+/* по умолчанию -  мобильная версия - 0 - 767 px*/
+@media (min-width: 0) {
+
+
+
+
+
+
+}
+
   .top-menu-block {
     width: 100%;
     padding-right: 0;
