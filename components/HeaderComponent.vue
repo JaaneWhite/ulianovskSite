@@ -162,6 +162,9 @@ export default {
 @media (min-width: 768px) {
   .header-top-row {
     .logo-block {
+      .logo-img {
+        margin: 15px auto auto;
+      }
 
     }
     .header-title-block {

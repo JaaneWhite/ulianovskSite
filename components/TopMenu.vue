@@ -5,55 +5,94 @@
       <b-navbar-nav fill class="top-menu">
         <b-nav-item-dropdown href="#" class="top-menu-item" text="Путеводители">
           <b-container class="dropdown-menu-container">
-            <b-dropdown-item href="#">Фонды досоветского периода</b-dropdown-item>
-            <b-dropdown-item href="#">Фонды советского периода</b-dropdown-item>
+            <b-row class="dd-menu-row">
+              <b-col cols="12" xl="6" class="dd-menu-col">
+                <b-dropdown-item href="#">Фонды досоветского периода</b-dropdown-item>
+              </b-col>
+              <b-col cols="12" xl="6" class="dd-menu-col">
+                <b-dropdown-item href="#">Фонды советского периода</b-dropdown-item>
+              </b-col>
+            </b-row>
           </b-container>
         </b-nav-item-dropdown>
         <b-nav-item-dropdown href="#" class="top-menu-item" text="Указатели">
           <b-container class="dropdown-menu-container">
-            <b-dropdown-item href="#">Именной</b-dropdown-item>
-            <b-dropdown-item href="#">Географический</b-dropdown-item>
+            <b-row class="dd-menu-row">
+              <b-col cols="12" xl="6" class="dd-menu-col">
+                <b-dropdown-item href="#">Именной</b-dropdown-item>
+              </b-col>
+              <b-col cols="12" xl="6" class="dd-menu-col">
+                <b-dropdown-item href="#">Географический</b-dropdown-item>
+              </b-col>
+            </b-row>
+
           </b-container>
         </b-nav-item-dropdown>
         <b-nav-item href="#" class="top-menu-item">Муниципальные архивы <br> Ульяновской области</b-nav-item>
         <b-nav-item-dropdown href="#" class="top-menu-item" text="Тематические базы данных">
           <b-container class="dropdown-menu-container">
-            <b-dropdown-item href="#">Дворяне Симбирской губернии</b-dropdown-item>
-            <b-dropdown-item href="#">Ревизские сказки</b-dropdown-item>
-            <b-dropdown-item href="#">Симбирское купечество</b-dropdown-item>
-            <b-dropdown-item href="#">Клировые ведомости</b-dropdown-item>
-            <b-dropdown-item href="#">Фотокаталог</b-dropdown-item>
-            <b-dropdown-item href="#">Военнопленные</b-dropdown-item>
-            <b-dropdown-item href="#">Захоронения</b-dropdown-item>
+            <b-row class="dd-menu-row">
+              <b-col cols="12" xl="4" class="dd-menu-col">
+                <b-dropdown-item href="#">Каталог изданий</b-dropdown-item>
+                <b-dropdown-item href="#">Уставные грамоты</b-dropdown-item>
+                <b-dropdown-item href="#">Фотокаталог</b-dropdown-item>
+                <b-dropdown-item href="#">Справочники АТД</b-dropdown-item>
+              </b-col>
+              <b-col cols="12" xl="4" class="dd-menu-col">
+                <b-dropdown-item href="#">Справочно-информационный фонд архива</b-dropdown-item>
+                <b-dropdown-item href="#">Клировые ведомости</b-dropdown-item>
+                <b-dropdown-item href="#">Награжденные</b-dropdown-item>
+              </b-col>
+              <b-col cols="12" xl="4" class="dd-menu-col">
+                <b-dropdown-item href="#">Перепись населения</b-dropdown-item>
+                <b-dropdown-item href="#">Ревизские сказки</b-dropdown-item>
+                <b-dropdown-item href="#">Фотокаталог</b-dropdown-item>
+              </b-col>
+            </b-row>
           </b-container>
         </b-nav-item-dropdown>
         <b-nav-item-dropdown href="#" class="top-menu-item" text="Услуги">
           <b-container class="dropdown-menu-container">
-            <b-dropdown-item href="#">Социально-правовые и тематические запросы</b-dropdown-item>
-            <b-dropdown-item href="#">Обслуживание пользователей в читальном зале</b-dropdown-item>
-            <b-dropdown-item href="#">Приём документов от организаций, являющихся источниками комплектования архива</b-dropdown-item>
-            <b-dropdown-item href="#">Составление информационных документов</b-dropdown-item>
-            <b-dropdown-item href="#">Проведение информационных мероприятий</b-dropdown-item>
-            <b-dropdown-item href="#">Предоставление документов организациям для экспонирования</b-dropdown-item>
-            <b-dropdown-item href="#">Копирование документов и печатных изданий</b-dropdown-item>
-            <b-dropdown-item href="#">Обеспечение сохранности и упорядочение документов организаций</b-dropdown-item>
+            <b-row class="dd-menu-row">
+              <b-col cols="12" xl="4" class="dd-menu-col">
+                <b-dropdown-item href="#">Социально-правовые и тематические запросы</b-dropdown-item>
+                <b-dropdown-item href="#">Обслуживание пользователей в читальном зале</b-dropdown-item>
+                <b-dropdown-item href="#">Приём документов от организаций, являющихся источниками комплектования архива</b-dropdown-item>
+              </b-col>
+              <b-col cols="12" xl="4" class="dd-menu-col">
+                <b-dropdown-item href="#">Составление информационных документов</b-dropdown-item>
+                <b-dropdown-item href="#">Проведение информационных мероприятий</b-dropdown-item>
+                <b-dropdown-item href="#">Предоставление документов организациям для экспонирования</b-dropdown-item>
+              </b-col>
+              <b-col cols="12" xl="4" class="dd-menu-col">
+                <b-dropdown-item href="#">Копирование документов и печатных изданий</b-dropdown-item>
+                <b-dropdown-item href="#">Обеспечение сохранности и упорядочение документов организаций</b-dropdown-item>
+              </b-col>
+            </b-row>
           </b-container>
         </b-nav-item-dropdown>
         <b-nav-item-dropdown href="#" class="top-menu-item" text="Об архиве">
           <b-container class="dropdown-menu-container">
-            <div class="dd-menu-item-title">Общие сведения</div>
-            <b-dropdown-item href="#">История архива, Правовые документы</b-dropdown-item>
-            <b-dropdown-item href="#">Список муниципальных архивов Ульяновской области, Вакансии</b-dropdown-item>
+            <b-row class="dd-menu-row">
+              <b-col cols="12" xl="4" class="dd-menu-col">
+                <div class="dd-menu-item-title">Общие сведения</div>
+                <b-dropdown-item href="#">История архива, Правовые документы</b-dropdown-item>
+                <b-dropdown-item href="#">Список муниципальных архивов Ульяновской области, Вакансии</b-dropdown-item>
+              </b-col>
+              <b-col cols="12" xl="4" class="dd-menu-col">
 
             <div class="dd-menu-item-title">Деятельность</div>
             <b-dropdown-item href="#">Рассекречивание</b-dropdown-item>
             <b-dropdown-item href="#">Планы развития архивного дела</b-dropdown-item>
             <b-dropdown-item href="#">Отчеты о выполнении плана развития архивного дела</b-dropdown-item>
             <b-dropdown-item href="#">Антикоррупционная деятельность</b-dropdown-item>
+              </b-col>
+              <b-col cols="12" xl="4" class="dd-menu-col">
             <b-dropdown-item href="#">Источники комплектования</b-dropdown-item>
             <b-dropdown-item href="#">Отчёт о проведении специальной оценки условий труда</b-dropdown-item>
             <b-dropdown-item href="#">Планы мероприятий по охране труда</b-dropdown-item>
-
+              </b-col>
+            </b-row>
           </b-container>
         </b-nav-item-dropdown>
         <b-nav-item href="#" class="top-menu-item" text="">Контакты</b-nav-item>
@@ -127,29 +166,33 @@ export default {
             flex-direction: column;
             text-align: right;
             align-items: flex-end;
+            .dd-menu-row {
+              .dd-menu-col {
+                padding: 0;
+                .dropdown-item {
+                  color: white;
+                  font-size: 15px;
+                  line-height: 1.733;
+                  white-space: normal;
+                  width: 100%;
 
-            .dropdown-item {
-              color: white;
-              font-size: 15px;
-              line-height: 1.733;
-              white-space: normal;
-              width: 100%;
+                  &:hover {
+                    color: #daa3a3;
+                    background-color: transparent;
+                  }
 
-              &:hover {
-                color: #daa3a3;
-                background-color: transparent;
+                }
+                .dd-menu-item-title {
+                  color: #daa3a3;
+                  font-size: 15px;
+                  width: 100%;
+                  border-bottom: #daa3a3 solid 1px;
+                  text-align: left;
+                  padding-left: 30px;
+                  padding-top: 15px;
+
+                }
               }
-
-            }
-            .dd-menu-item-title {
-              color: #daa3a3;
-              font-size: 15px;
-              width: 100%;
-              border-bottom: #daa3a3 solid 1px;
-              text-align: left;
-              padding-left: 30px;
-              padding-top: 15px;
-
             }
           }
         }
@@ -169,26 +212,15 @@ export default {
 /* ПК версия -  от 1024 px*/
 @media (min-width: 1024px) {
   .top-menu-block {
-    width: 100%;
-    padding-right: 0;
-    padding-left: 0;
     justify-content: space-between;
 
     .top-menu {
-      width: 100%;
       height: 50px;
 
       .top-menu-item {
         height: 100%;
-        border: none;
-        box-shadow: none;
         .nav-link {
-          font-size: 15px;
-          color: #474334;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          text-align: center;
+          border: none;
 
           &:hover {
             font-size: 15px;
@@ -202,40 +234,27 @@ export default {
           }
 
         }
-        &.show {
-          .nav-link {
-            color: white;
-            background-color: #9e0000;
-          }
-
-        }
         .dropdown-toggle::after {
           display: none;
         }
         .dropdown-menu {
-          border: none;
-          border-radius: 0;
-          margin: 0;
-          padding: 0;
           position: fixed;
-          left: 0;
-          right: 0;
-          top: auto;
-          width: 100%;
           .dropdown-menu-container {
-            background-color: #9e0000;
-            padding: 0;
+            text-align: left;
+            .dd-menu-row {
+              width: 100%;
+              margin: 30px 50px;
+              .dd-menu-col {
 
-            .dropdown-item {
-              color: white;
-              font-size: 15px;
-              line-height: 1.733;
+                .dropdown-item {
+                  padding-top: 15px;
+                  padding-bottom: 15px;
 
-              &:hover {
-                color: #daa3a3;
-                background-color: transparent;
+                }
+                .dd-menu-item-title {
+                  display: none;
+                }
               }
-
             }
           }
         }
