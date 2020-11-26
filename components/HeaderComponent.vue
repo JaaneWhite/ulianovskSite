@@ -194,8 +194,8 @@ export default {
   }
 }
 
-  /* ПК версия -  от 1024 px*/
-  @media (min-width: 1024px) {
+/* ПК версия -  от 1024 px*/
+@media (min-width: 1024px) {
     .header-top-row {
       .logo-block {
       }
