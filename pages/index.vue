@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import SearchTabs from "~/pages/SearchTabs";
+import SearchTabs from "~/components/SearchTabs";
 
 export default {
   components: {SearchTabs}
