@@ -3,7 +3,7 @@
   <b-row class="footer-main-row">
     <b-container class="footer-main-cont">
       <b-row class="footer-content-row">
-        <b-col cols="12" xl="3" class="footer-content-col">
+        <b-col cols="12" md="6" xl="3" class="footer-content-col">
           <b-list-group class="footer-list">ОБ АРХИВЕ
             <b-list-group class="footer-sub-list" title="Общие сведения">Общие сведения
               <b-list-group-item class="footer-list-item"><b-link to="">История архива, Правовые документы</b-link></b-list-group-item>
@@ -21,7 +21,7 @@
           </b-list-group>
 
         </b-col>
-        <b-col cols="12" xl="3" class="footer-content-col">
+        <b-col cols="12" md="6" xl="3" class="footer-content-col">
           <b-list-group class="footer-list">УСЛУГИ
 
               <b-list-group-item class="footer-list-item"><b-link to="">Социально-правовые и тематические запросы</b-link></b-list-group-item>
@@ -35,7 +35,7 @@
           </b-list-group>
 
         </b-col>
-        <b-col cols="12" xl="3" class="footer-content-col">
+        <b-col cols="12" md="6" xl="3" class="footer-content-col">
           <b-list-group class="footer-list">ТЕМАТИЧЕСКИЕ БАЗЫ ДАННЫХ
 
             <b-list-group-item class="footer-list-item"><b-link to="">Дворяне Симбирской губернии</b-link></b-list-group-item>
@@ -53,7 +53,7 @@
 
           </b-list-group>
         </b-col>
-        <b-col cols="12" xl="3" class="footer-content-col">
+        <b-col cols="12" md="6" xl="3" class="footer-content-col">
           <b-list-group class="footer-list">УКАЗАТЕЛИ
             <b-list-group-item class="footer-list-item"><b-link to="">Именной</b-link></b-list-group-item>
             <b-list-group-item class="footer-list-item"><b-link to="">Географический</b-link></b-list-group-item>
@@ -110,35 +110,48 @@
       </b-row>
       <b-row class="footer-banner-row">
         <div class="banner-container">
-          <b-img class="banner-img"></b-img>
+          <b-link class="banner-link" to=""><b-img class="banner-img" src="~assets/img/banners/1.png"></b-img></b-link>
         </div>
         <div class="banner-container">
-          <b-img class="banner-img"></b-img>
+          <b-link class="banner-link" to=""><b-img class="banner-img" src="~assets/img/banners/2.png"></b-img></b-link>
         </div>
         <div class="banner-container">
-          <b-img class="banner-img"></b-img>
+          <b-link to="" class="banner-link"><b-img class="banner-img" src="~assets/img/banners/3.png"></b-img></b-link>
         </div>
         <div class="banner-container">
-          <b-img class="banner-img"></b-img>
+          <b-link to="" class="banner-link"><b-img class="banner-img" src="~assets/img/banners/4.png"></b-img></b-link>
         </div>
         <div class="banner-container">
-          <b-img class="banner-img"></b-img>
+          <b-link to="" class="banner-link"><b-img class="banner-img" src="~assets/img/banners/5.png"></b-img></b-link>
         </div>
         <div class="banner-container">
-          <b-img class="banner-img"></b-img>
+          <b-link to="" class="banner-link"><b-img class="banner-img" src="~assets/img/banners/6.png"></b-img></b-link>
         </div>
         <div class="banner-container">
-          <b-img class="banner-img"></b-img>
+          <b-link to="" class="banner-link"><b-img class="banner-img" src="~assets/img/banners/7.png"></b-img></b-link>
         </div>
         <div class="banner-container">
-          <b-img class="banner-img"></b-img>
+          <b-link to="" class="banner-link"><b-img class="banner-img" src="~assets/img/banners/8.png"></b-img></b-link>
         </div>
         <div class="banner-container">
-          <b-img class="banner-img"></b-img>
+          <b-link to="" class="banner-link"><b-img class="banner-img" src="~assets/img/banners/9.png"></b-img></b-link>
         </div>
 
       </b-row>
       <b-row class="footer-logo-row">
+        <b-col cols="12" md="6" xl="6" class="logo-col">
+          <div>
+            <b-link class="logo-link" to=""><b-img class="logo-img" src="~assets/img/logos/1.png"></b-img></b-link>
+            <b-link class="logo-link" to=""><b-img class="logo-img" src="~assets/img/logos/2.png"></b-img></b-link>
+            <b-link class="logo-link" to=""><b-img class="logo-img" src="~assets/img/logos/3.png"></b-img></b-link>
+            <b-link class="logo-link" to=""><b-img class="logo-img" src="~assets/img/logos/4.png"></b-img></b-link>
+          </div>
+          <b-link class="logo-text" to="">© Государственное учреждение <br>
+            "Государственный архив Ульяновской области"</b-link>
+        </b-col>
+        <b-col cols="12" md="6" xl="6" class="logo-col right">
+          <b-link class="logo-link  alt" to=""><b-img class="logo-img" src="~assets/img/logos/logo alt soft.png"></b-img></b-link>
+        </b-col>
 
       </b-row>
     </b-container>
@@ -148,7 +161,12 @@
 
 <script>
 export default {
-  name: "FooterComponent"
+  name: "FooterComponent",
+  data() {
+    return {
+
+    }
+  }
 }
 </script>
 
@@ -162,13 +180,15 @@ export default {
     background-position: right bottom;
     background-repeat: no-repeat;
 
+
     .footer-main-cont {
       color: white;
       font-size: 14px;
 
       .footer-content-row {
         margin-top: 50px;
-        margin-bottom: 50px;
+        padding-bottom: 20px;
+        border-bottom: solid #474334 1px;
         .footer-content-col {
           .footer-list {
             font-weight: bold;
@@ -177,6 +197,7 @@ export default {
               font-weight: normal;
               padding-left: 15px;
               margin-top: 15px;
+              border-left: solid #9e0000 1px;
               .footer-list-item {
                 background: transparent;
                 border-radius: 0;
@@ -194,6 +215,7 @@ export default {
               border-radius: 0;
               border: none;
               font-weight: normal;
+              border-left: solid #9e0000 1px;
               a {
                 color: white;
                 &:hover {
@@ -242,39 +264,98 @@ export default {
           }
         }
       }
+      .footer-banner-row {
+        margin: 50px 15px;
+        justify-content: space-between;
+        border-bottom: solid #474334 1px;
+        .banner-container {
+          width: 140px;
+          height: 105px;
+          background-color: #2f2d27;
+          margin-bottom: 50px;
+          display: flex;
+          .banner-link {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            .banner-img {
+              margin: auto;
+              opacity: 50%;
+              &:hover {
+                opacity: 100%;
+              }
+            }
+          }
+        }
+      }
+      .footer-logo-row {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        .logo-col {
+          display: flex;
+          flex-direction: column;
+          .logo-link {
+            margin-top: auto;
+            margin-bottom: auto;
+
+            .logo-img {
+              height: 40px;
+              margin-right: 5px;
+              margin-top: auto;
+              margin-bottom: auto;
+              opacity: 50%;
+
+              &:hover {
+                opacity: 100%;
+              }
+            }
+          }
+            .alt {
+              margin-left: auto;
+              margin-right: 0;
+              .logo-img {
+                height: 25px;
+              }
+            }
+
+          .logo-text {
+              font-size: 14px;
+              color: rgb(64, 64, 64);
+              line-height: 1.714;
+              text-align: left;
+          }
+        }
+
+      }
+
     }
   }
-  .footer-banner-row {
-    margin: 50px 15px;
-    justify-content: space-between;
-    .banner-container {
-      width: 140px;
-      height: 105px;
-      background-color: #2f2d27;
-      margin-bottom: 30px;
-    }
-  }
-  .footer-logo-row {
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
+
 }
 /* планшетная версия - 768 - 1023 px*/
 @media (min-width: 768px) {
   .footer-banner-row {
     margin: 50px 0;
     justify-content: space-between;
+
     .banner-container {
       width: 140px;
       height: 105px;
       background-color: #2f2d27;
       margin-bottom: 30px;
+
     }
   }
 }
+
 /* ПК версия -  от 1024 px*/
 @media (min-width: 1024px) {
-
+  .logo-col {
+    flex-direction: row !important;
+  }
+  .logo-text {
+    margin-left: 10px;
+  }
 }
 
 </style>
