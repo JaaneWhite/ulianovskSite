@@ -24,14 +24,23 @@ export default {
 <style lang="scss">
 /* по умолчанию -  мобильная версия - 0 - 767 px*/
 @media (min-width: 0) {
+
+@media (min-width: 768px) {
   .main-row {
     background-image: url("~assets/img/bg.png");
+    background-repeat: no-repeat;
+    background-position: top;
+    .search-row {
+      height: 640px;
+      padding-top: 60px;
+    }
   }
 }
-@media (min-width: 768px) {
-
 }
 @media (min-width: 1024px) {
+  .search-row {
+
+  }
 
 
 }
