@@ -57,6 +57,91 @@
         </b-card>
       </b-row>
     </b-row>
+    <b-row class="news-section">
+      <b-col cols="8" class="news-title-col">
+      <b-row class="home-section-title news-title">Новости</b-row>
+      </b-col>
+      <b-col cols="4" class="news-title-col-all">
+        <b-link to="" class="all-news-link">Все новости</b-link>
+      </b-col>
+      <b-row class="news-block">
+        <b-col cols="12" xl="5" class="main-news">
+          <b-row>
+            <b-col cols="2" class="news-date-col">
+              <b-row class="news-date-date">05</b-row>
+              <b-row class="news-date-month">ноя</b-row>
+              <b-row class="news-date-month">2020</b-row>
+            </b-col>
+            <b-col cols="10" class="news-body-col">
+              <b-img src="~assets/img/home/news main.png"></b-img>
+              <b-link class="main-news-title" to="">В архиве продолжаются занятия по внедрению новых Правил</b-link>
+              <b-row class="main-news-text">14 октября 2020 года состоялось очередное плановое занятие по изучению «Правил организации хранения, комплектования, учета и использования документов АФ РФ и других архивных документов, 2020 г.» для сотрудников госархива и видео занятие для коллег из муниципальных архивов Ульяновской области на тему «Система справочно-поисковых средств». Занятие провела главный архивист отдела...</b-row>
+
+            </b-col>
+          </b-row>
+        </b-col>
+        <b-col cols="12" xl="7" class="other-news">
+          <b-row class="other-news-row">
+            <b-col cols="2" xl="1" class="news-date-col">
+              <b-row class="news-date-date">02</b-row>
+              <b-row class="news-date-month">сен</b-row>
+              <b-row class="news-date-month">2020</b-row>
+            </b-col>
+            <b-col cols="10" xl="11" class="news-body-col">
+              <b-row style="margin-bottom: 40px">
+                <b-col cols="12" xl="5" style="padding: 0">
+                  <b-img src="~assets/img/home/news-1.png"></b-img>
+                </b-col>
+                <b-col cols="12" xl="7" style="padding: 0">
+                  <b-link class="main-news-title" to=""><div>Государственный архив Ульяновской области  принимает участие в реализации проекта по историческому ... </div></b-link>
+                  <b-row class="main-news-text">1 сентября 2020 года в Ульяновской области стартовал проект «Уроки исторической памяти», направленный на повышение уровня знаний.</b-row>
+                </b-col>
+              </b-row>
+            </b-col>
+          </b-row>
+          <b-row class="other-news-row">
+            <b-col cols="2" xl="1" class="news-date-col">
+              <b-row class="news-date-date">02</b-row>
+              <b-row class="news-date-month">сен</b-row>
+              <b-row class="news-date-month">2020</b-row>
+            </b-col>
+            <b-col cols="10" xl="11" class="news-body-col">
+              <b-row style="margin-bottom: 40px">
+                <b-col cols="12" xl="5" style="padding: 0">
+                  <b-img src="~assets/img/home/news-1.png"></b-img>
+                </b-col>
+                <b-col cols="12" xl="7" style="padding: 0">
+                  <b-link class="main-news-title" to=""><div>Государственный архив Ульяновской области  принимает участие в реализации проекта по историческому ... </div></b-link>
+                  <b-row class="main-news-text">1 сентября 2020 года в Ульяновской области стартовал проект «Уроки исторической памяти», направленный на повышение уровня знаний.</b-row>
+                </b-col>
+              </b-row>
+            </b-col>
+          </b-row>
+          <b-row class="other-news-row">
+            <b-col cols="2" xl="1" class="news-date-col">
+              <b-row class="news-date-date">02</b-row>
+              <b-row class="news-date-month">сен</b-row>
+              <b-row class="news-date-month">2020</b-row>
+            </b-col>
+            <b-col cols="10" xl="11" class="news-body-col">
+              <b-row style="margin-bottom: 40px">
+                <b-col cols="12" xl="5" style="padding: 0">
+                  <b-img src="~assets/img/home/news-1.png"></b-img>
+                </b-col>
+                <b-col cols="12" xl="7" style="padding: 0">
+                  <b-link class="main-news-title" to=""><div>Государственный архив Ульяновской области  принимает участие в реализации проекта по историческому ... </div></b-link>
+                  <b-row class="main-news-text">1 сентября 2020 года в Ульяновской области стартовал проект «Уроки исторической памяти», направленный на повышение уровня знаний.</b-row>
+                </b-col>
+              </b-row>
+            </b-col>
+          </b-row>
+
+        </b-col>
+
+
+      </b-row>
+
+    </b-row>
 
 
 </b-container>
@@ -227,8 +312,171 @@ export default {
 
       }
     }
+    .news-section {
+      margin-top: 40px;
+      .news-title-col {
+        padding: 0;
+      }
+      .news-title-col-all {
+        padding: 0;
+        display: flex;
+      }
+
+      .news-title {
+        background: url("~assets/svg/decor 3.svg") left no-repeat;
+        background-size: 82px;
+        padding-top: 20px;
+        padding-bottom: 15px;
+        padding-left: 20px;
+      }
+      .all-news-link {
+        margin: auto 0 auto auto;
+        padding-right: 15px;
+        background-image: url("~assets/img/arrow right.png");
+        background-position: right;
+        background-repeat: no-repeat;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: underline;
+        color: #949081;
+        &:hover {
+          color: #9e0000;
+        }
 
 
+      }
+      .news-block {
+        width: 100%;
+        .main-news {
+          padding: 0;
+          .news-date-col {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            .news-date-date {
+              font-size: 40px;
+              font-family: Oswald, sans-serif;
+              color: #474334;
+              font-weight: bold;
+              text-transform: uppercase;
+              line-height: 0.9;
+              margin-left: auto;
+              margin-right: auto;
+              margin-top: 25px;
+              border-top: solid #474334 2px;
+              padding-top: 10px;
+
+            }
+            .news-date-month {
+              font-size: 18px;
+              font-family: Oswald, sans-serif;
+              color: #474334;
+              text-transform: uppercase;
+              line-height: 1.556;
+              margin-left: auto;
+              margin-right: auto;
+
+
+            }
+          }
+          .news-body-col {
+            padding: 0 15px 0 0;
+
+            img {
+              width: 100%;
+              margin-bottom: 15px;
+            }
+            .main-news-title {
+
+              font-size: 20px;
+              font-family: Roboto, sans-serif;
+              color: #474334;
+              font-weight: bold;
+              line-height: 1.417;
+              &:hover {
+                color: #9e0000;
+                text-decoration: none;
+              }
+
+            }
+            .main-news-text {
+              margin-top: 15px;
+              font-size: 12px;
+              font-family: Roboto, sans-serif;
+              color: #474334;
+              line-height: 1.625;
+            }
+          }
+        }
+        .other-news {
+          padding: 0;
+          margin-top: 30px;
+          .news-date-col {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            .news-date-date {
+              font-size: 40px;
+              font-family: Oswald, sans-serif;
+              color: #474334;
+              font-weight: bold;
+              text-transform: uppercase;
+              line-height: 0.9;
+              margin-left: auto;
+              margin-right: auto;
+              margin-top: 35px;
+
+            }
+            .news-date-month {
+              font-size: 18px;
+              font-family: Oswald, sans-serif;
+              color: #474334;
+              text-transform: uppercase;
+              line-height: 1.556;
+              margin-left: auto;
+              margin-right: auto;
+
+
+            }
+          }
+          .news-body-col {
+            padding: 0;
+            padding-right: 15px;
+            img {
+              width: 100%;
+            }
+            .main-news-title {
+
+              font-size: 16px;
+              font-family: Roboto, sans-serif;
+              color: #474334;
+              font-weight: bold;
+              line-height: 1.417;
+              &:hover {
+                color: #9e0000;
+                text-decoration: none;
+              }
+              div {
+                max-height: 65px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                margin-top: 30px;
+              }
+            }
+            .main-news-text {
+              margin-top: 20px;
+              font-size: 12px;
+              font-family: Roboto, sans-serif;
+              color: #474334;
+              line-height: 1.625;
+              max-height: 75px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+          }
+        }
+      }
+    }
   }
 
 
@@ -306,32 +554,44 @@ export default {
       }
     }
   }
+  .news-section {
+    margin-top: 40px;
+
+    .news-title {
+      background: url("~assets/svg/decor 3.svg") left no-repeat;
+      background-size: 82px;
+      padding-top: 20px;
+      padding-bottom: 15px;
+      padding-left: 20px;
+    }
+  }
 
 
 }
 @media (min-width: 1024px) {
-  .search-row {
-
-  }
   .service-section {
     margin-top: 60px;
+
     .service-section-row {
       margin-top: 40px;
+
       .section-card {
         width: auto;
+
         .card-body {
           padding: 0 0 10%;
         }
+
         .card-link {
           .card-img {
             border-radius: 0;
           }
+
           .card-title {
             padding: 20px 30px;
             width: 75%;
             font-size: 18px;
           }
-
 
 
         }
@@ -352,14 +612,76 @@ export default {
         }
 
       }
+
       .pop-list {
         max-width: 25%;
 
       }
     }
   }
+  .news-section {
+    .news-block {
+      .main-news {
+        .news-body-col {
+          padding-right: 40px;
+
+          img {
+            margin-bottom: 30px;
+          }
+
+          .main-news-title {
+            font-size: 24px;
+          }
+
+          .main-news-text {
+            margin-top: 30px;
+            font-size: 16px;
+          }
+        }
+      }
+
+      .other-news {
+        margin-top: 0;
+        .other-news-row {
+          &:hover {
+            .news-body-col {
+              img {
+                opacity: 50%;
+              }
+
+              .main-news-title {
+                color: #9e0000;
+              }
+            }
+          }
+        }
 
 
+        .news-body-col {
+          padding-right: 40px;
+          flex-direction: column;
+          img {
+            width: 100%;
+          }
+          .main-news-title {
+            font-size: 20px;
+            div {
+              max-height: 85px;
+              margin-top: 0;
+              padding-left: 30px;
+            }
+          }
+          .main-news-text {
+            margin-top: 20px;
+            font-size: 16px;
+            max-height: 80px;
+            padding-left: 30px;
+          }
+        }
+      }
+    }
 
+
+  }
 }
 </style>
