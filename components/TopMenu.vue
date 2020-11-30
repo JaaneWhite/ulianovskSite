@@ -213,6 +213,7 @@ export default {
 @media (min-width: 1024px) {
   .top-menu-block {
     justify-content: space-between;
+    padding-bottom: 0;
 
     .top-menu {
       height: 50px;
@@ -239,6 +240,7 @@ export default {
         }
         .dropdown-menu {
           position: fixed;
+          background-color: #9e0000;
           .dropdown-menu-container {
             text-align: left;
             .dd-menu-row {
