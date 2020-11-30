@@ -14,13 +14,17 @@
       <b-row style="padding-top: 30px; flex-direction: column">
         <b-form-radio-group class="search-radio" buttons>
           <b-form-group class="search-radio-line">
-          <b-form-radio v-model="selected" class="search-radio-button" value="a">Фонды</b-form-radio>
+            <b-form-radio v-model="selected" class="search-radio-button" value="a">Фонды</b-form-radio>
+            <div class="search-radio-button-divider">•</div>
           <b-form-radio v-model="selected" class="search-radio-button" value="b">Единицы хранения</b-form-radio>
+            <div class="search-radio-button-divider">•</div>
           <b-form-radio v-model="selected" class="search-radio-button" value="c">Документы</b-form-radio>
+            <div class="search-radio-button-divider">•</div>
           <b-form-radio v-model="selected" class="search-radio-button" value="d">Адресный указатель</b-form-radio>
           </b-form-group>
           <b-form-group class="search-radio-line">
           <b-form-radio v-model="selected" class="search-radio-button" value="e">Именной указатель</b-form-radio>
+            <div class="search-radio-button-divider">•</div>
           <b-form-radio v-model="selected" class="search-radio-button" value="f">Источники комплектования</b-form-radio>
           </b-form-group>
         </b-form-radio-group>
@@ -35,8 +39,19 @@
                 class="search-dd"
                 split-class="search-dd-split"
                 toggle-class="search-dd-toggle"
+                :text="arcSelected.text"
               >
-                <b-dropdown-form>
+                <b-dropdown-form class="search-dd-form">
+                  <b-form-input id="search-input-archieve" type="search" class="search-input"></b-form-input>
+                  <b-list-group class="select-list">
+                    <b-list-group-item
+                      v-for="archive in archives"
+                      class="select-list-item"
+                      @click="arcSelected=archive"
+                    >
+                      {{archive.text}}
+                    </b-list-group-item>
+                  </b-list-group>
 
                 </b-dropdown-form>
               </b-dropdown>
@@ -48,7 +63,7 @@
             </b-col>
             <b-col cols="12" md="8" class="search-form-col">
               <b-form class="search-form">
-                <b-form-input id="search-input" placeholder="" type="search"></b-form-input>
+                <b-form-input id="search-input-site" placeholder="" type="search" class="search-input"></b-form-input>
                 <b-button class="search-button keyboard-button"></b-button>
               </b-form>
             </b-col>
@@ -59,7 +74,7 @@
             </b-col>
             <b-col cols="12" md="8" class="search-form-col">
               <b-form class="search-form">
-                <b-form-input id="search-input" placeholder="" type="search"></b-form-input>
+                <b-form-input id="search-input-f-number" placeholder="" type="search" class="search-input"></b-form-input>
                 <b-button class="search-button keyboard-button"></b-button>
               </b-form>
             </b-col>
@@ -70,7 +85,7 @@
             </b-col>
             <b-col cols="12" md="8" class="search-form-col">
               <b-form class="search-form">
-                <b-form-input id="search-input" placeholder="" type="search"></b-form-input>
+                <b-form-input id="search-input-f-name" placeholder="" type="search" class="search-input"></b-form-input>
                 <b-button class="search-button keyboard-button"></b-button>
               </b-form>
             </b-col>
@@ -79,24 +94,25 @@
                 <b-button class="clean-button">Очистить</b-button>
                 <b-button class="search-button sb-button"></b-button>
           </b-row>
-
-
-
         </b-form-group>
-
-
       </b-row>
     </b-tab>
-
-
-    </b-tabs>
+  </b-tabs>
 </template>
 <script>
 export default {
   name: 'SearchTabs',
   data() {
     return {
-      selected: ''
+      selected: 'a',
+      arcSelected: {text: 'Найти нужное...', value: ''},
+      archives: [
+        {text: 'Название архива 1', value: 'a1'},
+        {text: 'Название архива 2', value: 'a2'},
+        {text: 'Длинное название архива на несколько строк текста, например на две', value: 'a2'},
+        {text: 'Ещё одно не менее длинное название архива на несколько строк текста, например на три или даже на четыре', value: 'a2'}
+
+      ]
     }
   }
 }
@@ -194,27 +210,47 @@ export default {
           margin-right: auto;
           margin-left: auto;
           margin-bottom: 0;
+          display: flex;
+          .bv-no-focus-ring {
+            display: flex;
+          }
           .search-radio-button {
             background-color: transparent;
             border: none;
             border-radius: 0;
             font-family: Oswald, sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+            line-height: 1.5;
             color: #949081;
             border-bottom: dashed #949081 2px;
             padding-bottom: 0;
-            padding-left: 10px;
-            padding-right: 10px;
+            padding-left: 0;
+            padding-right: 0;
+            display: inline-flex;
+            flex-direction: row;
+
             &.active {
-              color: #474334;
-              border-bottom: dashed #474334 2px;
+                color: #474334;
+                border-bottom: dashed #474334 2px;
             }
             &:hover {
-              color: #9e0000;
-              border-bottom: dashed #9e0000 2px;
+                color: #9e0000;
+                border-bottom: dashed #9e0000 2px;
             }
             input {
               display: none;
             }
+          }
+          .search-radio-button-divider {
+            font-family: Oswald, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 1.5;
+            color: #474334;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 5px;
           }
 
       }
@@ -230,7 +266,13 @@ export default {
             margin-left: 0;
             margin-bottom: 0;
             margin-top: 0;
-            border: none;
+            border: solid #dcd9cc 1px;
+            .search-input {
+              height: 45px;
+              border-radius: 0;
+              border: none;
+              box-shadow: none;
+            }
           }
         }
         .input-title {
@@ -241,6 +283,14 @@ export default {
         .search-dd {
           width: 100%;
           height: 45px;
+          border: solid #dcd9cc 1px;
+          .dropdown-menu {
+            border-radius: 0;
+            border: solid #dcd9cc 1px;
+            padding: 0;
+            margin-top: 0;
+            transform: translate3d(-1px, 43px, 0px);
+          }
 
           .search-dd-split {
             width: 90%;
@@ -248,11 +298,20 @@ export default {
             background-color: white;
             border: none;
             box-shadow: none;
-
+            color: #949081;
+            font-size: 13px;
+            font-style: italic;
+            line-height: 1.2;
+            text-align: left;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
+
           .dropdown-toggle::after {
             content: none;
           }
+
           .search-dd-toggle {
             width: 10%;
             border-radius: 0;
@@ -263,15 +322,46 @@ export default {
             background-image: url("~assets/svg/arrow down.svg");
             background-repeat: no-repeat;
             background-position: center;
-            background-size: 50%;
+            background-size: 30%;
 
             &[aria-expanded="true"] {
               background-image: url("~assets/svg/arrow up.svg");
-
             }
 
 
+          }
 
+          .search-dd-form {
+            .b-dropdown-form {
+              padding: 15px;
+
+              .search-input {
+                height: 45px;
+                border-radius: 0;
+                border: solid #dcd9cc 1px;
+                margin-bottom: 15px;
+                box-shadow: none;
+
+
+              }
+
+              .select-list {
+                .select-list-item {
+                  color: #474334;
+                  font-size: 14px;
+                  line-height: 1.429;
+                  padding-left: 0;
+                  padding-right: 0;
+                  border: none;
+                  &:hover {
+                    color: #9e0000;
+                    cursor: pointer;
+                  }
+
+
+                }
+              }
+            }
           }
         }
         .button-row {
@@ -319,6 +409,9 @@ export default {
   .search-tabs {
     margin: auto;
     width: 640px;
+  }
+  .search-radio-button {
+    font-size: 16px;
   }
 }
 
