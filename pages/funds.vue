@@ -40,11 +40,23 @@
         <b-row class="items-info-row">
           <b-col cols="12" md="6" class="items-all">Всего фондов: 1-20 из 2905</b-col>
           <b-col cols="12" md="3" class="select-col">Выводить по:
-          <select-form :options="perPageSelectList" :selected="20" />
+          <select-form
+            :options="perPageSelectList"
+            :selected="20"
+            v-on:selectChanged="perPageSelectChanged"
+
+          />
           </b-col>
           <b-col cols="12" md="3" class="select-col">Сортировать:
           <select-form :options="sortSelectList" :selected="'По умолчанию'" />
           </b-col>
+        </b-row>
+        <b-row class="pagination-row">
+          <pagination
+            class="person-list-pagination"
+            :total-rows="fundsListRows"
+            :pagination-area-controls="paginationAreaControls"
+            :per-page="perPage"/>
         </b-row>
 
       </b-col>
@@ -59,9 +71,10 @@ import PageTitle from "@/components/PageTitle";
 import BreadCrumbs from "@/components/BreadCrumbs";
 import SearchTile from "@/components/SearchTile";
 import SelectForm from "@/components/SelectForm";
+import Pagination from "@/components/Pagination";
 export default {
   name: "funds",
-  components: {SelectForm, SearchTile, BreadCrumbs, PageTitle},
+  components: {Pagination, SelectForm, SearchTile, BreadCrumbs, PageTitle},
   data() {
     return {
       pageTitleText: 'Путеводитель по фондам досоветского периода',
@@ -94,10 +107,42 @@ export default {
         {text: 'Фонды учреждений общественного призрения и общественных организаций', link: '#'}
       ],
       perPageSelectList: [20, 50, 100],
-      sortSelectList: ['По умолчанию','По алфавиту','Сначала новые']
+      sortSelectList: ['По умолчанию','По алфавиту','Сначала новые'],
+      perPage: 20,
+      paginationAreaControls: '',
+      fundsList: [
+        {text: '1917-1921гг. Симбирская контора закупочно-распределительного пункта Всероссийского центрального союза потребительских обществ  г.Симбирск Симбирской губернии', link:'#'},
+        {text: '1917-1924гг. Симбирский губернский комиссариат народного просвещения  г.Симбирск', link:'#'},
+        {text: 'Управление Симбирским губернским архивным фондом', link:'#'},
+        {text: '1918-1924гг. Симбирская заготовительная контора № 8  Симбирского губернского продовольственного комитета г.Симбирск', link:'#'},
+        {text: '1918-1924гг. Сенгилеевская заготовительная контора  Сибмирского губернского продовольственного комитета г.Сенгилей Симбирской губернии', link:'#'},
+        {text: 'Алатырская городская продовольственная управа', link:'#'},
+        {text: 'Парашевская волостная продоволственная управа', link:'#'},
+        {text: 'Уполномоченный Симбирского губернского управления по Алатырскому, Ардатовскому и Курмышскому уездам', link:'#'},
+        {text: 'Сызранская городская продовольственная управа', link:'#'},
+        {text: 'Канадейский районный продовольственный комитет', link:'#'},
+        {text: '1917-1919гг. Симбирское союзное товарищество кооперативов  	г.Симбирск Симбирской губернии', link:'#'},
+        {text: '1917г. Никольская волостная продовольственная управа Министерства продовольствия Временного правительства  Сызранского уезда Симбирской губернии', link:'#'},
+        {text: 'Маколовский волостной продовольственный комитет', link:'#'},
+        {text: '1917г. Базарно-Сызганская районная продовольственная управа Министерства продовольствия Временного правительства Карсунского уезда Симбирской губернии', link:'#'},
+        {text: '1928-1930гг. Чердаклинский районный союз сельскохозяйственной кооперации "Райколхозполеводсоюз"', link:'#'},
+        {text: '1924-1928гг. Районный заведующий государственными земельными имуществами 1 района по Ульяновскому уезду', link:'#'},
+        {text: 'Ульяновского губернского земельного управления г.Ульяновск', link:'#'}
+      ]
+
 
     }
-  }
+  },
+  methods: {
+    perPageSelectChanged: function (selected){
+      this.perPage= selected;
+    }
+  },
+  computed: {
+    fundsListRows() {
+      return this.fundsList.length
+    }
+  },
 }
 </script>
 

@@ -3,6 +3,7 @@
     v-model="selected"
     :options="options"
     class="form-select"
+    @change="onSelectChanges()"
   >
 
   </b-form-select>
@@ -14,6 +15,11 @@ export default {
   props: {
     selected: {},
     options: {}
+  },
+  methods: {
+    onSelectChanges: function () {
+      this.$emit("selectChanged", this.selected)
+    }
   }
 }
 </script>
