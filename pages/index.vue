@@ -4,7 +4,7 @@
   <b-row class="search-row">
     <SearchTabs/>
   </b-row>
-  <b-row class="service-section">
+    <b-row class="service-section">
     <b-row class="home-section-title service-title">услуги</b-row>
     <b-row class="service-section-row">
           <b-card class="section-card">
