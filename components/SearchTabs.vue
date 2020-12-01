@@ -176,6 +176,21 @@ export default {
           box-shadow: none;
           width: 100%;
           border: none;
+          &::-webkit-input-placeholder {
+            color: #949081;
+            font-style: italic;
+            font-size: 13px;
+            line-height: 1.2;
+
+          }
+
+          &::-moz-placeholder {
+            color: #949081;
+            font-style: italic;
+            font-size: 13px;
+            line-height: 1.2;
+
+          }
         }
         .keyboard-button {
           border-radius: 0;

@@ -35,6 +35,7 @@ export default {
         color: #ffffff;
         font-weight: bold;
         text-transform: uppercase;
+        padding-left: 15px;
 
       }
     }
@@ -48,6 +49,7 @@ export default {
       .page-title {
         font-size: 36px;
         width: 75%;
+        padding-left: 0;
       }
     }
   }
