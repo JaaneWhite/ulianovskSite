@@ -31,6 +31,41 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss">
+/* по умолчанию -  мобильная версия - 0 - 767 px*/
+@media (min-width: 0) {
+  .pagination {
+    margin: 30px auto;
+  }
+  .page-item.disabled .page-link, .page-item .page-link, .page-item:hover .page-link {
+    color: #474435;
+    background-color: transparent;
+    font-size: 14px;
+    line-height: 1.2 !important;
+    box-shadow: none;
+    border: none;
+  }
+
+  .page-item.active .page-link {
+    color: #474435;
+    background-color: #edeadb;
+    border: none;
+    font-size: 14px;
+    line-height: 1.2;
+    box-shadow: none;
+  }
+  .pagination-next-button {
+    background-image: url("~assets/img/arrow right d.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .pagination-prev-button {
+    background-image: url("~assets/img/arrow left.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+}
+
 
 </style>
