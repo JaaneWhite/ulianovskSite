@@ -34,7 +34,7 @@
       </b-col>
       <b-col cols="12" md="6" class="attribute-col">
         <b-row class="attribute-col-title">{{stock.annotation.title}}</b-row>
-        <b-row class="attribute-col-body" :class="showFullAnnClass">
+        <b-row class="attribute-col-body text" :class="showFullAnnClass">
             <p>{{stock.annotation.text}}</p>
         </b-row>
         <b-row class="attribute-col-show-full" :class="showFullAnnClass">
@@ -43,7 +43,7 @@
       </b-col>
       <b-col cols="12" md="6" class="attribute-col">
         <b-row class="attribute-col-title">{{stock.histInfo.title}}</b-row>
-        <b-row class="attribute-col-body" :class="showFullHistClass">
+        <b-row class="attribute-col-body text" :class="showFullHistClass">
           <p>{{stock.histInfo.text}}</p>
         </b-row>
         <b-row class="attribute-col-show-full" :class="showFullHistClass">
@@ -51,6 +51,9 @@
         </b-row>
       </b-col>
     </b-row>
+
+
+
   </b-container>
 
 </div>
@@ -157,7 +160,6 @@ export default {
             this.showFullLinkHistText = 'Показать полный текст';
           }
           break;
-
       }
 
 
@@ -189,8 +191,13 @@ export default {
         a {
           text-decoration: underline;
         }
+        &.text {
+          max-height: 200px;
+          height: 200px;
+        }
         &.show-full {
           max-height: none;
+          height: auto;
         }
       }
       .attribute-col-show-full {
