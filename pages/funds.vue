@@ -44,7 +44,7 @@
 
       </b-col>
       <b-col cols="12" md="8" xl="9" class="funds-col">
-        <search-tile />
+        <search-tile :search-tile-title="searchTileTitle" />
         <b-row class="items-info-row">
           <b-col cols="12" md="12" xl="6" class="items-all">Всего фондов: 1-20 из 2905</b-col>
           <b-col cols="12" md="5" xl="3" class="select-col">Выводить по:
@@ -132,6 +132,7 @@ export default {
         {text: 'Фонды органов, учреждений и организаций духовного ведомства', link: '#'},
         {text: 'Фонды учреждений общественного призрения и общественных организаций', link: '#'}
       ],
+      searchTileTitle: 'Поиск документов',
       perPageSelectList: [20, 50, 100],
       sortSelectList: ['По умолчанию','По алфавиту','Сначала новые'],
       perPage: 5,

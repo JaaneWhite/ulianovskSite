@@ -1,6 +1,6 @@
 <template>
   <b-row class="search-tile">
-    <div class="search-title">ПОИСК ДОКУМЕНТОВ</div>
+    <div class="search-title">{{searchTileTitle}}</div>
     <b-form class="search-form">
       <b-form-input id="search-input" placeholder="Введите номер фонда и/или слово в названии..." type="search"></b-form-input>
       <b-button class="search-button keyboard-button"></b-button>
@@ -11,7 +11,10 @@
 
 <script>
 export default {
-  name: "SearchTile"
+  name: "SearchTile",
+  props: {
+    searchTileTitle: {}
+  }
 }
 </script>
 
@@ -27,9 +30,9 @@ export default {
     font-weight: bold;
     text-transform: uppercase;
     line-height: 1.2;
-    text-align: center;
+    text-align: left;
     margin-right: auto;
-    margin-left: auto;
+    margin-left: 5%;
   }
 
   .search-form {
