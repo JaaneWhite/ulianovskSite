@@ -6,7 +6,7 @@
       <bread-crumbs :bread-crumb-items="breadCrumbItems"></bread-crumbs>
     </b-row>
     <b-row class="main-content-row">
-      <b-col cols="12" md="4" class="rubric-col">
+      <b-col cols="12" md="4" xl="3" class="rubric-col">
         <b-row class="rubric-title">Рубрики</b-row>
 
         <b-button v-b-modal.modalPopover class="rubric-select-button">{{selectedRubric}}</b-button>
@@ -34,12 +34,20 @@
 
         </b-modal>
 
+        <b-list-group class="rubric-list">
+          <b-list-group-item
+            v-for="listItem in rubricList"
+            :to="listItem.link"
+            class="rubric-list-item"
+          >{{listItem.text}}</b-list-group-item>
+        </b-list-group>
+
       </b-col>
-      <b-col cols="12" md="8" class="funds-col">
+      <b-col cols="12" md="8" xl="9" class="funds-col">
         <search-tile />
         <b-row class="items-info-row">
-          <b-col cols="12" md="6" class="items-all">Всего фондов: 1-20 из 2905</b-col>
-          <b-col cols="12" md="3" class="select-col">Выводить по:
+          <b-col cols="12" md="12" xl="6" class="items-all">Всего фондов: 1-20 из 2905</b-col>
+          <b-col cols="12" md="5" xl="3" class="select-col">Выводить по:
           <select-form
             :options="perPageSelectList"
             :selected="20"
@@ -47,7 +55,7 @@
 
           />
           </b-col>
-          <b-col cols="12" md="3" class="select-col">Сортировать:
+          <b-col cols="12" md="7" xl="3" class="select-col">Сортировать:
           <select-form :options="sortSelectList" :selected="'По умолчанию'" />
           </b-col>
         </b-row>
@@ -59,10 +67,27 @@
             :per-page="perPage"/>
         </b-row>
 
+        <b-row class="funds-list-row">
+          <b-list-group class="funds-list">
+            <b-list-group-item
+              v-for="listItem in fundsList"
+              :to="listItem.link"
+              class="funds-list-item"
+            >{{listItem.text}}</b-list-group-item>
+          </b-list-group>
+        </b-row>
+        <b-row class="pagination-row">
+          <pagination
+            class="person-list-pagination"
+            :total-rows="fundsListRows"
+            :pagination-area-controls="paginationAreaControls"
+            :per-page="perPage"/>
+        </b-row>
+
       </b-col>
     </b-row>
-
   </b-container>
+  <join-us />
 </div>
 </template>
 
@@ -72,9 +97,10 @@ import BreadCrumbs from "@/components/BreadCrumbs";
 import SearchTile from "@/components/SearchTile";
 import SelectForm from "@/components/SelectForm";
 import Pagination from "@/components/Pagination";
+import JoinUs from "@/components/JoinUs";
 export default {
   name: "funds",
-  components: {Pagination, SelectForm, SearchTile, BreadCrumbs, PageTitle},
+  components: {JoinUs, Pagination, SelectForm, SearchTile, BreadCrumbs, PageTitle},
   data() {
     return {
       pageTitleText: 'Путеводитель по фондам досоветского периода',
@@ -150,6 +176,7 @@ export default {
 /* по умолчанию -  мобильная версия - 0 - 767 px*/
 @media (min-width: 0) {
   .main-content-row {
+    margin-bottom: 30px;
     .rubric-col {
 
       .rubric-title {
@@ -191,6 +218,10 @@ export default {
 
       }
 
+      .rubric-list {
+        display: none;
+      }
+
     }
     .funds-col {
       padding-left: 0;
@@ -200,6 +231,7 @@ export default {
         color: #474435;
         font-style: italic;
         line-height: 1.2;
+        margin-bottom: 20px;
         .items-all {
           margin-top: 10px;
         }
@@ -208,6 +240,32 @@ export default {
           margin-top: 10px;
         }
 
+      }
+      .funds-list-row {
+        margin-bottom: 30px;
+        margin-top: 30px;
+        .funds-list {
+          padding-left: 15px;
+          .funds-list-item {
+            background-image: url("~assets/img/Ellipse 1.png");
+            background-position-y: center;
+            background-position-x: left;
+            background-repeat: no-repeat;
+            font-size: 14px;
+            color: #474435;
+            font-weight: bold;
+            line-height: 1.5;
+            border: none;
+            &:hover, &:focus, &:active {
+              color: #9e0000;
+              background-color: transparent;
+            }
+          }
+        }
+      }
+      .pagination-row {
+        border-top: solid #e4dfcb 1px;
+        border-bottom: solid #e4dfcb 1px;
       }
     }
   }
@@ -255,10 +313,66 @@ export default {
 }
 /* планшетная версия - 768 - 1023 px*/
 @media (min-width: 768px) {
+  .main-content-row {
+    .rubric-col {
+      border-right: solid 1px #474334;
+      .rubric-select-button {
+        display: none;
+      }
+      .rubric-list {
+        display: flex;
+        max-height: 1200px;
+        overflow: scroll;
+        padding-right: 15px;
+        .rubric-list-item {
+          font-size: 15px;
+          color: #474435;
+          font-weight: bold;
+          line-height: 1.5;
+          border: none;
+          border-radius: 0;
+          padding-left: 0;
+          padding-right: 0;
 
+          &:hover, &:focus, &:active {
+            background-color: #edeadb;
+          }
+
+
+        }
+      }
+    }
+    .funds-col {
+      padding-left: 30px;
+      .items-info-row {
+        .items-all, .select-col {
+          padding-left: 0;
+        }
+      }
+      .funds-list-row {
+        .funds-list {
+          padding-left: 0;
+
+          .funds-list-item {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
 }
 /* ПК версия -  от 1024 px*/
 @media (min-width: 1024px) {
-
+  .main-content-row {
+    .funds-col {
+      .funds-list-row {
+        .funds-list {
+          .funds-list-item {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
 }
 </style>

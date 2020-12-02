@@ -35,7 +35,7 @@ export default {
 /* по умолчанию -  мобильная версия - 0 - 767 px*/
 @media (min-width: 0) {
   .pagination {
-    margin: 30px auto;
+    margin: 10px auto;
   }
   .page-item.disabled .page-link, .page-item .page-link, .page-item:hover .page-link {
     color: #474435;
