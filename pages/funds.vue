@@ -52,7 +52,6 @@
             :options="perPageSelectList"
             :selected="20"
             v-on:selectChanged="perPageSelectChanged"
-
           />
           </b-col>
           <b-col cols="12" md="7" xl="3" class="select-col">Сортировать:
@@ -61,7 +60,7 @@
         </b-row>
         <b-row class="pagination-row">
           <pagination
-            class="person-list-pagination"
+
             :total-rows="fundsListRows"
             :pagination-area-controls="paginationAreaControls"
             :per-page="perPage"/>

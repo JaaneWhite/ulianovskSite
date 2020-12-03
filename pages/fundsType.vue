@@ -58,13 +58,63 @@
         </b-row>
         <b-row></b-row>
       </b-col>
-      <b-col cols="12" md="9" class="cases-list-col"></b-col>
+      <b-col cols="12" md="9" class="cases-list-col">
+        <search-tile :search-tile-title="searchTileTitle" />
+        <b-row class="select-tile-row">
+          <div class="select-tile" v-for="selectTile in selectTiles">
+            <b-link class="select-text" :to="selectTile.link">{{selectTile.text}}</b-link>
+            <b-button class="select-close-button"></b-button>
+          </div>
+        </b-row>
+        <b-row class="items-info-row">
+          <b-col cols="12" md="6" class="items-all">Всего дел: 1-10 из 2905</b-col>
+          <b-col cols="12" md="6" class="select-col">Выводить по:
+            <select-form
+              :options="perPageSelectList"
+              :selected="10"
+              v-on:selectChanged="perPageSelectChanged"
+            />
+          </b-col>
+        </b-row>
+        <b-row class="pagination-row">
+          <pagination
+
+            :total-rows="casesListRows"
+            :pagination-area-controls="paginationAreaControls"
+            :per-page="perPage" />
+        </b-row>
+        <b-row class="cases-list-row">
+          <b-row class="case-tile" v-for="caseItem in casesList">
+            <b-col cols="12" md="12" xl="9" class="case-tile-info-col">
+              <b-row class="case-tile-title">{{caseItem.code}}</b-row>
+              <b-row class="case-tile-info">
+                <b-col cols="12" md="4">{{'Номер дела: '+ caseItem.number}} </b-col>
+                <b-col cols="12" md="8">{{caseItem.scanned}}</b-col>
+              </b-row>
+            </b-col>
+            <b-col cols="12" md="12" xl="3" class="case-tile-button-col">
+              <b-button class="case-tile-button read"><div>Читать дело</div></b-button>
+              <b-button class="case-tile-button copy"><div>Заказать копию</div></b-button>
+              <b-button class="case-tile-button ask"><div>Подать требование</div></b-button>
+            </b-col>
+
+          </b-row>
+
+        </b-row>
+        <b-row class="pagination-row">
+          <pagination
+
+            :total-rows="casesListRows"
+            :pagination-area-controls="paginationAreaControls"
+            :per-page="perPage" />
+        </b-row>
+      </b-col>
     </b-row>
 
 
 
   </b-container>
-
+<join-us />
 </div>
 </template>
 
@@ -72,9 +122,12 @@
 import PageTitleInner from "@/components/PageTitleInner";
 import BreadCrumbs from "@/components/BreadCrumbs";
 import AttrTree from "@/components/AttrTree";
+import SearchTile from "@/components/SearchTile";
+import Pagination from "@/components/Pagination";
+import JoinUs from "@/components/JoinUs";
 export default {
   name: "fundsType",
-  components: {AttrTree, BreadCrumbs, PageTitleInner},
+  components: {JoinUs, Pagination, SearchTile, AttrTree, BreadCrumbs, PageTitleInner},
   data() {
     return {
       pageTitleText: '1917-1921гг. Симбирская контора закупочно-распределительного пункта Всероссийского центрального союза потребительских обществ  г.Симбирск Симбирской губернии',
@@ -149,7 +202,27 @@ export default {
         }, {
         id: 'c',
         label: 'c',
-      } ]
+      } ],
+      selectTiles: [
+        {text: 'Ф. Р-155 Оп. 1', value: ''},
+        {text: '1927', value: ''},
+        {text: 'Бухгалтерия', value: ''}
+      ],
+      perPage: 10,
+      paginationAreaControls: '',
+      perPageSelectList: [10, 20],
+      casesList: [
+        {number: '1', scanned: 'Дело не отсканировано', link:'#', code: 'Ф. Р-91 Оп. 3 Д. 1 Циркуляры и приказы ВСНХ СССР, распоряжения Центрального Управления лесной промышленности'},
+        {number: '2', scanned: 'Дело отсканировано', link:'#', code: 'Ф. Р-91 Оп. 3 Д. 2 Циркулярное письмо Симбирского Городского районного комитета РКП(б) о недопустимости бойкотирования в приёме на работу членов партии'},
+        {number: '3', scanned: 'Дело отсканировано не полностью', link:'#', code: 'Ф. Р-91 Оп. 3 Д. 3 Приказы ВСНХ СССР, Центрального Управления лесной промышленности'},
+        {number: '5', scanned: 'Дело отсканировано', link:'#', code: 'Ф. Р-91 Оп. 3 Д. 5 Директивное указание Симбирского губисполкома от 20 ноября 1923 года об особо осторожной выдаче сведений иностранцам, занимающимся коммерческой деятельностью и переписка с административным отделом управления губисполкома о борьбе с преступностью'},
+        {number: '6', scanned: 'Дело не отсканировано', link:'#', code: 'Ф. Р-91 Оп. 3 Д. 6 Циркуляры Симбирского губернского объединения лесной промышленности «Симбирсклес» о заключении коллективного договора с губернским Союзом деревообделочников'},
+        {number: '7', scanned: 'Дело отсканировано не полностью', link:'#', code: 'Ф. Р-91 Оп. 3 Д. 7 Переписка с Симбирским губисполкомом и губсовнархозом о сокращении штатного расписания и по личному составу'},
+        {number: '8', scanned: 'Дело отсканировано', link:'#', code: 'Ф. Р-91 Оп. 3 Д. 8 Статсведения о личном составе управления «Симбирсклеса», их партийной принадлежности и социальном происхождении на 15 ноября 1923 года, переписка с предприятиями по кадровым вопросам'},
+        {number: '9', scanned: 'Дело не отсканировано', link:'#', code: 'Ф. Р-91 Оп. 3 Д. 9 Список служащих объединения «Симбирсклес» с указанием их социального происхождения и судимости, переписка с ОГПУ об отправке почты через фельдкорпус'},
+        {number: '10', scanned: 'Дело отсканировано', link:'#', code: 'Ф. Р-91 Оп. 3 Д. 10 Переписка с Симбирским губпрокурором о расследовании злоупотреблений на Мелекесском лесозаводе'},
+        {number: '11', scanned: 'Дело отсканировано не полностью', link:'#', code: 'Ф. Р-91 Оп. 3 Д. 11 Список членов комсомола, работающих на Инзенском лесопильном заводе и переписка с ним по личному составу'}
+      ]
     }
   },
   methods: {
@@ -191,8 +264,16 @@ export default {
       }
 
 
+    },
+    perPageSelectChanged: function (selected){
+      this.perPage= selected;
     }
-  }
+  },
+  computed: {
+    casesListRows() {
+      return this.casesList.length
+    }
+  },
 }
 </script>
 
@@ -260,6 +341,142 @@ export default {
 
     }
   }
+  .tree-row {
+    margin-bottom: 60px;
+    .cases-list-col {
+      .select-tile-row {
+        display: flex;
+        flex-direction: row;
+        margin-top: 15px;
+        margin-bottom: 15px;
+
+        .select-tile {
+          display: flex;
+          flex-direction: row;
+          background-color: #efeada;
+          margin-top: 15px;
+          margin-bottom: 15px;
+          margin-right: 15px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          padding-left: 20px;
+          padding-right: 10px;
+
+          .select-text {
+            color: #939182;
+            font-size: 14px;
+
+
+          }
+          .select-close-button {
+            background-color: transparent;
+            background-image: url("~assets/svg/cross.svg");
+            background-size: 10px;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 0;
+            border: none;
+            margin-left: 10px;
+
+
+          }
+        }
+      }
+      .items-info-row {
+        font-size: 14px;
+        color: #474435;
+        font-style: italic;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        .items-all {
+          margin-top: 10px;
+        }
+        .select-col {
+          display: block;
+          margin-top: 10px;
+        }
+
+      }
+      .pagination-row {
+        border-top: solid #e4dfcb 1px;
+        border-bottom: solid #e4dfcb 1px;
+      }
+      .cases-list-row {
+        margin-bottom: 30px;
+        .case-tile {
+          border-top: solid #e4dfcb 1px;
+          border-bottom: solid #e4dfcb 1px;
+          margin-top: 30px;
+          font-size: 14px;
+          .case-tile-info-col {
+            .case-tile-title {
+              border-bottom: solid #e4dfcb 1px;
+              padding-top: 15px;
+              padding-bottom: 15px;
+              &:hover {
+                color: #9e0000;
+                cursor: pointer;
+              }
+            }
+
+            .case-tile-info {
+              padding-top: 15px;
+              padding-bottom: 15px;
+
+              div {
+                padding-left: 0;
+                padding-right: 0;
+              }
+            }
+          }
+          .case-tile-button-col {
+            .case-tile-button {
+              border-radius: 0;
+              border: solid #e4dfcb 1px;
+              background-color: transparent;
+              padding-top: 0;
+              padding-bottom: 0;
+              padding-right: 0;
+              width: 210px;
+              background-size: 25px;
+              background-repeat: no-repeat;
+              background-position-y: center;
+              background-position-x: 10px;
+              margin-bottom: 15px;
+              margin-right: 15px;
+              box-shadow: none;
+              &.read {
+                background-image: url("~assets/svg/read.svg");
+              }
+              &.copy {
+                background-image: url("~assets/svg/copy.svg");
+              }
+              &.ask {
+                background-image: url("~assets/svg/ask.svg");
+              }
+              div {
+                background-color: #e4dfcb;
+                margin-left: 30px;
+                color: #474334;
+                font-size: 14px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+
+              }
+              &:hover {
+                border: solid #9e0000 1px;
+                div {
+                  color: white;
+                  background-color: #9e0000;
+                }
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
 }
 /* планшетная версия - 768 - 1023 px*/
 @media (min-width: 768px) {
@@ -267,6 +484,7 @@ export default {
     .attribute-col {
       padding-left: 30px;
       padding-right: 30px;
+
       .attribute-col-title {
       }
 
@@ -274,10 +492,63 @@ export default {
       }
     }
   }
+  .tree-row {
+    .cases-list-col {
+      .items-info-row {
+        .items-all {
+        }
+
+        .select-col {
+
+          text-align: right;
+
+        }
+      }
+    }
+  }
 }
 
 /* ПК версия -  от 1024 px*/
 @media (min-width: 1024px) {
+  .tree-row {
+    .cases-list-col {
+      .cases-list-row {
+        border-top: solid #e4dfcb 1px;
+        margin-top: 45px;
+        .case-tile {
+          padding-top: 0;
+          border-top: none;
+          padding-bottom: 15px;
 
+          .case-tile-info-col {
+            padding-left: 30px;
+            .case-tile-title {
+              padding-top: 0;
+              padding-bottom: 30px;
+              min-height: 120px;
+              font-size: 16px;
+              font-weight: bold;
+            }
+
+            .case-tile-info {
+              padding-top: 15px;
+              font-size: 16px;
+
+            }
+          }
+          .case-tile-button-col {
+            padding-right: 0;
+            text-align: right;
+            .case-tile-button {
+              margin-right: 0;
+
+            }
+          }
+
+        }
+      }
+    }
+  }
 }
+
 </style>
