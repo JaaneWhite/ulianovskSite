@@ -51,6 +51,15 @@
         </b-row>
       </b-col>
     </b-row>
+    <b-row class="tree-row">
+      <b-col cols="12" md="3" class="tree-select-col">
+        <b-row>
+          <attr-tree :options="fundTreeOptions"></attr-tree>
+        </b-row>
+        <b-row></b-row>
+      </b-col>
+      <b-col cols="12" md="9" class="cases-list-col"></b-col>
+    </b-row>
 
 
 
@@ -62,9 +71,10 @@
 <script>
 import PageTitleInner from "@/components/PageTitleInner";
 import BreadCrumbs from "@/components/BreadCrumbs";
+import AttrTree from "@/components/AttrTree";
 export default {
   name: "fundsType",
-  components: {BreadCrumbs, PageTitleInner},
+  components: {AttrTree, BreadCrumbs, PageTitleInner},
   data() {
     return {
       pageTitleText: '1917-1921гг. Симбирская контора закупочно-распределительного пункта Всероссийского центрального союза потребительских обществ  г.Симбирск Симбирской губернии',
@@ -121,7 +131,25 @@ export default {
         ],
         annotation: {title: 'Аннотация', text: 'Протоколы совещаний общественно кооперативных организаций г. Симбирска, дела служащих, постановления и приказы о мобилизации граждан, протоколы тарифно-расценочной комиссии, книги для записей договоров, списки служащих, переписки, документы по страхованию товаров, ведомости о движении хлебопродуктов на ссыпных пунктах, ведомости о движении морепродуктов на ссыпных пунктах.'},
         histInfo: {title: 'Историческая справка', text: 'В феврале 1918 года постановлением Ульяновского губисполкома был создан земельный отдел. (ф.Р-155, оп.1, д.2, л.70 ). Ведал землеустройством, организацией государственных земельных имуществ, руководил сельскохозяйственными трестами, ветеринарными учреждениями и лесным хозяйством губернии. В январе 1922 года приказом губисполкома переименован в земельное управление ( газета "Коммунар", 15 января 1922 ...'}
-      }
+      },
+      fundTreeOptions: [
+        {
+        id: 'a',
+        label: 'a',
+        children: [ {
+          id: 'aa',
+          label: 'aa',
+          }, {
+          id: 'ab',
+          label: 'ab',
+          } ],
+        }, {
+        id: 'b',
+        label: 'b',
+        }, {
+        id: 'c',
+        label: 'c',
+      } ]
     }
   },
   methods: {

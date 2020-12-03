@@ -11,12 +11,14 @@
   "dependencies": {
     "@nuxt/content": "^1.9.0",
     "@nuxtjs/axios": "^5.12.2",
+    "@riophae/vue-treeselect": "^0.4.0",
     "bootstrap": "^4.5.2",
     "bootstrap-vue": "^2.17.3",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.6",
     "v-img": "^0.2.0",
-    "vue": "^2.6.12"
+    "vue": "^2.6.12",
+    "vue-teatree": "^2.0.1"
   },
   "devDependencies": {
     "fibers": "^5.0.0",
