@@ -90,6 +90,7 @@ export default {
         }
         .title-col {
           margin-bottom: 0;
+          margin-top: 0;
           .page-title-text {
             font-size: 20px;
           }

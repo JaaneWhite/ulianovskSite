@@ -62,7 +62,9 @@
         <search-tile :search-tile-title="searchTileTitle" />
         <b-row class="select-tile-row">
           <div class="select-tile" v-for="selectTile in selectTiles">
-            <b-link class="select-text" :to="selectTile.link">{{selectTile.text}}</b-link>
+            <div class="select-text" :to="selectTile.link">
+              {{selectTile.text}}
+            </div>
             <b-button class="select-close-button"></b-button>
           </div>
         </b-row>
@@ -86,7 +88,7 @@
         <b-row class="cases-list-row">
           <b-row class="case-tile" v-for="caseItem in casesList">
             <b-col cols="12" md="12" xl="9" class="case-tile-info-col">
-              <b-row class="case-tile-title">{{caseItem.code}}</b-row>
+              <b-link class="case-tile-title" :to="caseItem.link">{{caseItem.code}}</b-link>
               <b-row class="case-tile-info">
                 <b-col cols="12" md="4">{{'Номер дела: '+ caseItem.number}} </b-col>
                 <b-col cols="12" md="8">{{caseItem.scanned}}</b-col>
@@ -212,7 +214,7 @@ export default {
       paginationAreaControls: '',
       perPageSelectList: [10, 20],
       casesList: [
-        {number: '1', scanned: 'Дело не отсканировано', link:'#', code: 'Ф. Р-91 Оп. 3 Д. 1 Циркуляры и приказы ВСНХ СССР, распоряжения Центрального Управления лесной промышленности'},
+        {number: '1', scanned: 'Дело не отсканировано', link:'caseType', code: 'Ф. Р-91 Оп. 3 Д. 1 Циркуляры и приказы ВСНХ СССР, распоряжения Центрального Управления лесной промышленности'},
         {number: '2', scanned: 'Дело отсканировано', link:'#', code: 'Ф. Р-91 Оп. 3 Д. 2 Циркулярное письмо Симбирского Городского районного комитета РКП(б) о недопустимости бойкотирования в приёме на работу членов партии'},
         {number: '3', scanned: 'Дело отсканировано не полностью', link:'#', code: 'Ф. Р-91 Оп. 3 Д. 3 Приказы ВСНХ СССР, Центрального Управления лесной промышленности'},
         {number: '5', scanned: 'Дело отсканировано', link:'#', code: 'Ф. Р-91 Оп. 3 Д. 5 Директивное указание Симбирского губисполкома от 20 ноября 1923 года об особо осторожной выдаче сведений иностранцам, занимающимся коммерческой деятельностью и переписка с административным отделом управления губисполкома о борьбе с преступностью'},
