@@ -88,7 +88,11 @@
         <b-row class="cases-list-row">
           <b-row class="case-tile" v-for="caseItem in casesList">
             <b-col cols="12" md="12" xl="9" class="case-tile-info-col">
-              <b-link class="case-tile-title" :to="caseItem.link">{{caseItem.code}}</b-link>
+              <b-row class="case-tile-title">
+                <b-link :to="caseItem.link">{{caseItem.code}}
+                  <b-img src="~assets/img/folder.png"></b-img>
+                </b-link>
+              </b-row>
               <b-row class="case-tile-info">
                 <b-col cols="12" md="4">{{'Номер дела: '+ caseItem.number}} </b-col>
                 <b-col cols="12" md="8">{{caseItem.scanned}}</b-col>
@@ -460,7 +464,7 @@ export default {
                 background-color: #e4dfcb;
                 margin-left: 30px;
                 color: #474334;
-                font-size: 14px;
+                font-size: 15px;
                 padding-top: 10px;
                 padding-bottom: 10px;
 
@@ -474,7 +478,6 @@ export default {
               }
             }
           }
-
         }
       }
     }
@@ -528,13 +531,13 @@ export default {
               padding-top: 0;
               padding-bottom: 30px;
               min-height: 120px;
-              font-size: 16px;
+              font-size: 15px;
               font-weight: bold;
             }
 
             .case-tile-info {
               padding-top: 15px;
-              font-size: 16px;
+              font-size: 15px;
 
             }
           }
