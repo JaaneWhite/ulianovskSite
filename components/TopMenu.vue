@@ -95,7 +95,7 @@
             </b-row>
           </b-container>
         </b-nav-item-dropdown>
-        <b-nav-item to="#" class="top-menu-item" text="">Контакты</b-nav-item>
+        <b-nav-item to="contacts" class="top-menu-item" text="">Контакты</b-nav-item>
       </b-navbar-nav>
     </b-collapse>
 

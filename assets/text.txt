@@ -1,0 +1,13 @@
+.контакты {
+  font-size: 30px;
+  font-family: "Oswald";
+  color: rgb(71, 67, 52);
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: left;
+  position: absolute;
+  left: 35.844px;
+  top: 600.5px;
+  z-index: 15;
+}

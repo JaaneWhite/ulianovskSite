@@ -240,7 +240,6 @@ export default {
                   width: 20px;
                   height: 20px;
                   margin-bottom: auto;
-                  fill: #ffffff;
                 }
               }
               .contact-text-col {
