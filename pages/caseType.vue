@@ -36,6 +36,15 @@
               </b-row>
 
             </b-row>
+            <b-row class="case-annotation">
+              <b-row class="attribute-col-title">{{ caseItem.annotation.title }}</b-row>
+              <b-row class="attribute-col-body text" :class="showFullAnnClass">
+                <p>{{caseItem.annotation.text}}</p>
+              </b-row>
+              <b-row class="attribute-col-show-full" :class="showFullAnnClass">
+                <b-link @click="showFullSwitch('A')" >{{showFullLinkAnnText}}</b-link>
+              </b-row>
+            </b-row>
           </b-col>
           <b-col cols="12" xl="3" class="case-tile-button-col">
             <b-button class="case-tile-button read"><div>Читать дело</div></b-button>
@@ -43,25 +52,77 @@
             <b-button class="case-tile-button ask"><div>Подать требование</div></b-button>
           </b-col>
         </b-row>
+        <b-row class="linked-info-row">
+          <b-row class="attribute-col-title">связанная информация</b-row>
+          <b-row class="items-info-row">
+            <b-col cols="12" md="6" class="items-all">Всего документов: 1-10 из 31</b-col>
+            <b-col cols="12" md="6" class="select-col">Выводить по:
+              <select-form
+                :options="perPageSelectList"
+                :selected="10"
+                v-on:selectChanged="perPageSelectChanged"
+              />
+            </b-col>
+          </b-row>
+          <b-row class="pagination-row">
+            <pagination
+              :total-rows="addListRows"
+              :pagination-area-controls="paginationAreaControls"
+              :per-page="perPage"
+              />
+          </b-row>
+          <b-row class="linked-info">
+            <b-col
+              cols="12"
+              class="linked-info-col"
+              xl="6"
+              v-for="addInfoItem in caseItem.addInfo"
+            >
+              <b-row class="add-item-code">{{addInfoItem.code}}</b-row>
+              <b-row class="add-item-text">
+                <b-link :to="addInfoItem.link">{{addInfoItem.text}}</b-link>
+                <b-img src="~assets/img/folder.png"></b-img>
+              </b-row>
+            </b-col>
+          </b-row>
+          <b-row class="pagination-row">
+            <pagination
+              :total-rows="addListRows"
+              :pagination-area-controls="paginationAreaControls"
+              :per-page="perPage"
+            />
+          </b-row>
+
+        </b-row>
 
       </b-col>
+
     </b-row>
 
 
   </b-container>
+  <join-us />
 </div>
 </template>
 
 <script>
 import PageTitleInner from "@/components/PageTitleInner";
 import BreadCrumbs from "@/components/BreadCrumbs";
+import Pagination from "@/components/Pagination";
+import JoinUs from "@/components/JoinUs";
 export default {
   name: "caseType",
-  components: {BreadCrumbs, PageTitleInner},
+  components: {JoinUs, Pagination, BreadCrumbs, PageTitleInner},
   data() {
     return {
       pageTitleText: 'Циркуляры и приказы ВСНХ СССР, распоряжения  Центрального Управления лесной промышленности',
       pageTitleLink: {text: 'Назад на страницу описи', link: 'inventory'},
+      showFullAnn: false,
+      showFullAnnClass: '',
+      showFullLinkAnnText: 'Показать полный текст',
+      paginationAreaControls: '',
+      perPage: 10,
+      perPageSelectList: [10, 20],
       breadCrumbItems: [
         {
           text: 'Главная',
@@ -85,9 +146,12 @@ export default {
         inventory: {
           title: 'Опись',
           invCode: {text: 'Ф. Р-155 Оп. 1', link: ''},
-          invFund: {text: 'Ф. Р-155 Земельное управление Ульяновского губернского исполнительного комитета Совета рабочих, крестьянских и красноармейских депутатов. г. Ульяновск (февраль 1918 г. 22.07.1929 г.)', link: ''},
-          fundType: {text: 'Фонды советского периода', link: ''},
+          invFund: {
+            text: 'Ф. Р-155 Земельное управление Ульяновского губернского исполнительного комитета Совета рабочих, крестьянских и красноармейских депутатов. г. Ульяновск (февраль 1918 г. 22.07.1929 г.)',
+            link: ''
           },
+          fundType: {text: 'Фонды советского периода', link: ''},
+        },
         rubrics: {
           title: 'Рубрики',
           rubItems: [
@@ -116,21 +180,86 @@ export default {
             {text: 'Екатерина II', link: ''}
           ]
         },
-        annotation: {title: 'Аннотация', text: 'Постановления и циркуляры губисполкома. Протоколы заседаний губземотдела, губернских и уездных земельных съездов, губернских и уездных земельных коллегий, волостных земельных отделов, комитетов посевных площадей. План восстановления сельского хозяйства черноземной части Ульяновской губернии на 1925 -1930 гг. Отчеты и доклады о работе губернского, уездных и районных земельных отделов.'},
+        annotation: {
+          title: 'Аннотация',
+          text: 'Постановления и циркуляры губисполкома. Протоколы заседаний губземотдела, губернских и уездных земельных съездов, губернских и уездных земельных коллегий, волостных земельных отделов, комитетов посевных площадей. План восстановления сельского хозяйства черноземной части Ульяновской губернии на 1925 -1930 гг. Отчеты и доклады о работе губернского, уездных и районных земельных отделов. Постановления и циркуляры губисполкома. Протоколы заседаний губземотдела, губернских и уездных земельных съездов, губернских и уездных земельных коллегий, волостных земельных отделов, комитетов посевных площадей. План восстановления сельского хозяйства черноземной части Ульяновской губернии на 1925 -1930 гг. Отчеты и доклады о работе губернского, уездных и районных земельных отделов.' +
+            'Постановления и циркуляры губисполкома. Протоколы заседаний губземотдела, губернских и уездных земельных съездов, губернских и уездных земельных коллегий, волостных земельных отделов, комитетов посевных площадей. План восстановления сельского хозяйства черноземной части Ульяновской губернии на 1925 -1930 гг. Отчеты и доклады о работе губернского, уездных и районных земельных отделов.'
+        },
         addInfo: [
           {code: 'Ф. Р-1861 Оп. 1 Д. 1 Лл. 67', text: 'Основные положения закона о земле', link: ''},
-          {code: 'Ф. Р-1861 Оп. 1 Д. 1 Лл. 124', text: 'Об участии в работе общественных и государственных учреждений членов партии социалистов-революционеров. Инструкция Центрального комитета партии эсеров', link: ''},
-          {code: 'Ф. Р-1861 Оп. 1 Д. 1 Лл. 124', text: 'Об участии в работе общественных и государственных учреждений членов партии социалистов-революционеров. Инструкция Центрального комитета партии эсеров', link: ''},
-          {code: 'Ф. Р-1861 Оп. 1 Д. 1 Лл. 124', text: 'Об участии в работе общественных и государственных учреждений членов партии социалистов-революционеров. Инструкция Центрального комитета партии эсеров', link: ''},
-          {code: 'Ф. Р-1861 Оп. 1 Д. 1 Лл. 124', text: 'Об участии в работе общественных и государственных учреждений членов партии социалистов-революционеров. Инструкция Центрального комитета партии эсеров', link: ''},
-          {code: 'Ф. Р-1861 Оп. 1 Д. 1 Лл. 144', text: 'Об отношении партии эсеров к 1-й мировой войне. Резолюция к III съезду партии эсеров', link: ''},
-          {code: 'Ф. Р-1861 Оп. 1 Д. 1 Лл. 144', text: 'Об отношении партии эсеров к 1-й мировой войне. Резолюция к III съезду партии эсеров', link: ''},
-          {code: 'Ф. Р-1861 Оп. 1 Д. 1 Лл. 144', text: 'Об отношении партии эсеров к 1-й мировой войне. Резолюция к III съезду партии эсеров', link: ''},
-          {code: 'Ф. Р-1861 Оп. 1 Д. 1 Лл. 144', text: 'Об отношении партии эсеров к 1-й мировой войне. Резолюция к III съезду партии эсеров', link: ''},
-          {code: 'Ф. Р-1861 Оп. 1 Д. 1 Лл. 144', text: 'Об отношении партии эсеров к 1-й мировой войне. Резолюция к III съезду партии эсеров', link: ''},
+          {
+            code: 'Ф. Р-1861 Оп. 1 Д. 1 Лл. 124',
+            text: 'Об участии в работе общественных и государственных учреждений членов партии социалистов-революционеров. Инструкция Центрального комитета партии эсеров',
+            link: ''
+          },
+          {
+            code: 'Ф. Р-1861 Оп. 1 Д. 1 Лл. 124',
+            text: 'Об участии в работе общественных и государственных учреждений членов партии социалистов-революционеров. Инструкция Центрального комитета партии эсеров',
+            link: ''
+          },
+          {
+            code: 'Ф. Р-1861 Оп. 1 Д. 1 Лл. 124',
+            text: 'Об участии в работе общественных и государственных учреждений членов партии социалистов-революционеров. Инструкция Центрального комитета партии эсеров',
+            link: ''
+          },
+          {
+            code: 'Ф. Р-1861 Оп. 1 Д. 1 Лл. 124',
+            text: 'Об участии в работе общественных и государственных учреждений членов партии социалистов-революционеров. Инструкция Центрального комитета партии эсеров',
+            link: ''
+          },
+          {
+            code: 'Ф. Р-1861 Оп. 1 Д. 1 Лл. 144',
+            text: 'Об отношении партии эсеров к 1-й мировой войне. Резолюция к III съезду партии эсеров',
+            link: ''
+          },
+          {
+            code: 'Ф. Р-1861 Оп. 1 Д. 1 Лл. 144',
+            text: 'Об отношении партии эсеров к 1-й мировой войне. Резолюция к III съезду партии эсеров',
+            link: ''
+          },
+          {
+            code: 'Ф. Р-1861 Оп. 1 Д. 1 Лл. 144',
+            text: 'Об отношении партии эсеров к 1-й мировой войне. Резолюция к III съезду партии эсеров',
+            link: ''
+          },
+          {
+            code: 'Ф. Р-1861 Оп. 1 Д. 1 Лл. 144',
+            text: 'Об отношении партии эсеров к 1-й мировой войне. Резолюция к III съезду партии эсеров',
+            link: ''
+          },
+          {
+            code: 'Ф. Р-1861 Оп. 1 Д. 1 Лл. 144',
+            text: 'Об отношении партии эсеров к 1-й мировой войне. Резолюция к III съезду партии эсеров',
+            link: ''
+          },
         ]
 
       }
+    }
+  },
+  methods: {
+    showFullSwitch: function (label) {
+      switch (label) {
+        case 'A':
+          if (this.showFullAnn == false) {
+            this.showFullAnn = true;
+            this.showFullAnnClass = 'show-full';
+            this.showFullLinkAnnText = 'Скрыть полный текст';
+          } else {
+            this.showFullAnn = false;
+            this.showFullAnnClass = '';
+            this.showFullLinkAnnText = 'Показать полный текст';
+          }
+          break;
+      }
+    },
+    perPageSelectChanged: function (selected){
+      this.perPage= selected;
+    }
+  },
+  computed: {
+    addListRows() {
+      return this.caseItem.addInfo.length
     }
   }
 }
@@ -140,6 +269,7 @@ export default {
 /* по умолчанию -  мобильная версия - 0 - 767 px*/
 @media (min-width: 0) {
   .main-content-row {
+    margin-bottom: 45px !important;
     .case-path-col {
       .case-path {
 
@@ -165,6 +295,64 @@ export default {
               font-weight: bold;
               font-size: 16px;
               margin-bottom: 15px;
+            }
+          }
+        }
+        .case-annotation {
+          margin-top: 30px;
+          .attribute-col-title {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 15px;
+          }
+          .attribute-col-body {
+            flex-direction: column;
+            font-size: 16px;
+            max-height: 190px;
+            overflow: hidden;
+            text-align: justify;
+
+            a {
+              text-decoration: underline;
+            }
+            &.text {
+              max-height: 190px;
+            }
+            &.show-full {
+              max-height: none;
+              height: auto;
+            }
+          }
+          .attribute-col-show-full {
+            background-image: url("~assets/svg/arrow down d.svg");
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: 10px;
+            display: flex;
+            padding-right: 15px;
+            width: 100%;
+            margin-top: 15px;
+            a {
+              margin-left: auto;
+              font-size: 16px;
+              font-weight: bold;
+              text-decoration: none;
+              border-bottom: dashed #474334 1px;
+              &:hover {
+                color: #9e0000;
+                border-bottom: dashed #9e0000 1px;
+
+              }
+            }
+            &.show-full {
+              background-image: url("~assets/svg/arrow up d.svg");
+              a {
+                &:hover {
+                  color: #5e759f;
+                  border-bottom: dashed #5e759f 1px;
+                }
+              }
             }
           }
         }
@@ -212,6 +400,54 @@ export default {
           }
         }
       }
+      .linked-info-row {
+        margin-top: 45px;
+        margin-left: 15px;
+        flex-direction: column;
+        .attribute-col-title {
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: 16px;
+          margin-bottom: 15px;
+        }
+        .items-info-row {
+          font-size: 14px;
+          color: #474435;
+          font-style: italic;
+          line-height: 1.2;
+          margin-bottom: 20px;
+          .items-all {
+            margin-top: 10px;
+            padding-left: 0;
+          }
+          .select-col {
+            display: block;
+            margin-top: 10px;
+            text-align: right;
+          }
+
+        }
+        .linked-info {
+          margin-top: 45px;
+          .linked-info-col {
+            margin-bottom: 60px;
+            padding-right: 30px;
+            .add-item-code {
+              font-size: 14px;
+              color: #949182;
+              width: 100%;
+              margin-bottom: 30px;
+            }
+            .add-item-text {
+              font-size: 14px;
+              font-weight: bold;
+              width: 100%;
+              display: block;
+
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -223,7 +459,7 @@ export default {
 @media (min-width: 1024px) {
   .main-content-row {
     .case-path-col {
-      border-right: solid #efeada 1px;
+      border-right: solid #474435 1px;
       padding-right: 30px;
       .case-path {
 
