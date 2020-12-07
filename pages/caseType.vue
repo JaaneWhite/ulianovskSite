@@ -60,8 +60,7 @@
               <select-form
                 :options="perPageSelectList"
                 :selected="10"
-                v-on:selectChanged="perPageSelectChanged"
-              />
+                v-on:selectChanged="perPageSelectChanged"/>
             </b-col>
           </b-row>
           <b-row class="pagination-row">
@@ -110,9 +109,11 @@ import PageTitleInner from "@/components/PageTitleInner";
 import BreadCrumbs from "@/components/BreadCrumbs";
 import Pagination from "@/components/Pagination";
 import JoinUs from "@/components/JoinUs";
+import SelectForm from "@/components/SelectForm";
+
 export default {
   name: "caseType",
-  components: {JoinUs, Pagination, BreadCrumbs, PageTitleInner},
+  components: {SelectForm, JoinUs, Pagination, BreadCrumbs, PageTitleInner},
   data() {
     return {
       pageTitleText: 'Циркуляры и приказы ВСНХ СССР, распоряжения  Центрального Управления лесной промышленности',

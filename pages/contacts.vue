@@ -158,7 +158,7 @@ export default {
         font-family: 'Oswald', sans-serif;
         color: #474335;
         padding-left: 15px;
-        margin-left: 0px;
+        margin-left: 0;
         padding-top: 15px;
         padding-bottom: 15px;
         line-height: 1.2;
@@ -238,13 +238,10 @@ export default {
       flex-direction: row;
 
       .home-section-title {
-        padding-left: 20px;
         margin-left: -20px;
-        padding-top: 15px;
-        padding-bottom: 15px;
         margin-bottom: 30px;
         width: 100%;
-        padding-right: 0;
+        padding: 15px 0 15px 20px;
 
         &.bg-1 {
           background-size: 100px;
