@@ -24,14 +24,14 @@ export default {
     background-image: url("~assets/img/bg.png");
     background-repeat: no-repeat;
     background-position: top;
-    height: 180px;
+    height: 190px;
     .page-title-cont {
       display: flex;
       .page-title {
         margin: auto auto auto 0;
         width: 100%;
         font-family: Oswald, sans-serif;
-        font-size: 24px;
+        font-size: 20px;
         color: #ffffff;
         font-weight: bold;
         text-transform: uppercase;
@@ -44,7 +44,7 @@ export default {
 /* планшетная версия - 768 - 1023 px*/
 @media (min-width: 768px) {
   .page-title-row {
-    height: 260px;
+    height: 340px;
     .page-title-cont {
       .page-title {
         font-size: 36px;

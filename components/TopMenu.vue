@@ -55,7 +55,7 @@
           <b-container class="dropdown-menu-container">
             <b-row class="dd-menu-row">
               <b-col cols="12" xl="4" class="dd-menu-col">
-                <b-dropdown-item to="#">Социально-правовые и тематические запросы</b-dropdown-item>
+                <b-dropdown-item to="service">Социально-правовые и тематические запросы</b-dropdown-item>
                 <b-dropdown-item to="#">Обслуживание пользователей в читальном зале</b-dropdown-item>
                 <b-dropdown-item to="#">Приём документов от организаций, являющихся источниками комплектования архива</b-dropdown-item>
               </b-col>
