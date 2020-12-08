@@ -3,15 +3,16 @@
     <b-row >
       <b-container>
         <b-row class="header-top-row">
-          <b-col cols="12" md="2" xl="2" class="logo-block">
+          <b-col cols="0" md="0" xl="2" class="logo-block">
             <b-img src="~/assets/img/logo.png" class="logo-img"></b-img>
           </b-col>
-          <b-col cols="12" md="10" xl="10" class="header-title-block">
+          <b-col cols="12" md="12" xl="10" class="header-title-block">
             <b-row class="title-row">
-              <b-col cols="12" md="7" xl="9" class="title-text">
-                Государственный архив Ульяновской области
+              <b-col cols="12" md="8" xl="9" class="title-text">
+                <b-row class="md">Государственный архив Ульяновской области</b-row>
+                <b-row class="sm">ГАУО</b-row>
               </b-col>
-              <b-col cols="12" md="5" xl="3" class="login-block">
+              <b-col cols="12" md="0" xl="3" class="login-block">
                 <b-row class="login-title">
                   Авторизуйтесь для получения услуг архива
                 </b-row>
@@ -55,15 +56,19 @@ export default {
 @media (min-width: 0) {
   .header-top-row {
     .logo-block {
+      display: none;
       padding: 0;
-      display: flex;
       .logo-img {
         margin: auto;
+        width: 100%;
       }
     }
 
     .header-title-block {
       padding: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
 
       .title-row {
         .title-text {
@@ -74,10 +79,13 @@ export default {
           line-height: 1.5;
           text-align: left;
           padding-left: 15px;
-          margin-top: 15px;
+          margin-top: auto;
+          margin-bottom: auto;
+          display: none;
         }
 
         .login-block {
+          display: none;
           color: #949081;
           text-align: right;
           padding: 0 15px;
@@ -155,7 +163,9 @@ export default {
             }
           }
         }
-      }
+      .menu-row {
+      width: 100%}
+    }
     }
   }
 /* планшетная версия - 768 - 1023 px*/
@@ -163,7 +173,8 @@ export default {
   .header-top-row {
     .logo-block {
       .logo-img {
-        margin: 15px auto auto;
+        margin: 30px auto;
+        width: auto;
       }
 
     }
@@ -171,13 +182,16 @@ export default {
       padding: 0;
       .title-row {
         .title-text {
-          padding-left: 0;
+          padding-left: 15px;
+
+          .sm {
+            display:none;
+          }
+          .md {
+            display: flex;
+          }
         }
         .login-block {
-          padding: 0;
-          .login-title {
-            padding-bottom: 10px;
-          }
         }
         & .cart {
           padding-left: 25px;
@@ -204,7 +218,18 @@ export default {
       }
       .header-title-block {
         padding: 0;
+        flex-direction: column;
         .title-row {
+          .title-text {
+            margin-top: 15px;
+          }
+          .login-block {
+            display: block;
+            padding: 0;
+            .login-title {
+              padding-bottom: 10px;
+            }
+          }
           & .cart {
             .cart-link {
               font-size: 14px;

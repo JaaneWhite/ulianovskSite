@@ -1,1 +1,13 @@
 
+.Авторизуйтесь_для_получения_услуг_архива {
+  font-size: 13px;
+  font-family: "Roboto";
+  color: rgba(255, 255, 255, 0.749);
+  font-style: italic;
+  line-height: 1.2;
+  text-align: left;
+  position: absolute;
+  left: 36.146px;
+  top: 12.595px;
+  z-index: 112;
+}

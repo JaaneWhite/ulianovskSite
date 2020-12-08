@@ -1,7 +1,13 @@
 <template>
-  <b-navbar toggleable="lg" class="top-menu-block">
+  <b-navbar toggleable="lg" class="top-menu-block" :class="navbarClass">
+    <b-navbar-brand href="#">
+      <b-img src="~/assets/img/logo.png" class="logo-img" v-if="collapseExpanded === false" />
+      <b-row class="logo-text" v-if="collapseExpanded === false">ГАУО</b-row>
+      <b-row class="logo-text-expanded" v-else>Авторизуйтесь для получения услуг архива</b-row>
+    </b-navbar-brand>
+
     <b-navbar-toggle target="nav-collapse" class="burger-button"></b-navbar-toggle>
-    <b-collapse id="nav-collapse" is-nav >
+    <b-collapse id="nav-collapse" is-nav @show="onCollapseSwitch" @hide="onCollapseSwitch" >
       <b-navbar-nav fill class="top-menu">
         <b-nav-item-dropdown href="#" class="top-menu-item" text="Путеводители">
           <b-container class="dropdown-menu-container">
@@ -104,7 +110,27 @@
 
 <script>
 export default {
-  name: "TopMenu"
+  name: "TopMenu",
+  data() {
+    return {
+      collapseExpanded: false,
+      navbarClass: '',
+    }
+  },
+
+  methods: {
+    onCollapseSwitch: function () {
+      if (this.collapseExpanded === false) {
+        this.collapseExpanded = true;
+        this.navbarClass = 'navbarExpanded';
+
+      } else {
+        this.collapseExpanded = false;
+        this.navbarClass = '';
+      }
+    }
+  }
+
 }
 </script>
 
@@ -115,10 +141,58 @@ export default {
     width: 100%;
     padding-right: 0;
     padding-left: 0;
-    justify-content: flex-end;
+    justify-content: space-between;
+    .navbar-brand {
+      display: flex;
+      margin-left: 15px;
+      width: 70%;
+      .logo-img {
+        width: 57px;
+        height: 45px;
+      }
+      .logo-text {
+        font-family: 'Oswald', sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+        text-transform: uppercase;
+        line-height: 1.5;
+        text-align: left;
+        padding-left: 15px;
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+      .logo-text-expanded {
+        width: 80%;
+      }
+    }
+    &.navbarExpanded {
+      background-color: #9e0000;
+      .logo-text-expanded {
+        font-size: 13px;
+        color: white;
+        font-style: italic;
+        white-space: normal;
+      }
+    }
 
     .burger-button {
-      margin-right: 15px;
+      margin-right: 0;
+      border: none;
+      border-radius: 0;
+      outline: none;
+      &:hover, &:focus, &:active, &.active {
+        border-radius: 0;
+        border: none;
+        outline: none;
+      }
+      .navbar-toggler-icon {
+        background-image: url("~assets/img/menu open.png");
+      }
+      &.not-collapsed {
+        .navbar-toggler-icon {
+          background-image: url("~assets/img/menu close.png");
+        }
+      }
     }
 
     .top-menu {
