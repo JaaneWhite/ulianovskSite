@@ -25,9 +25,14 @@ export default {
     line-height: 1.2;
     text-transform: uppercase;
     font-weight: bold;
+    &.fs-sm {
+      font-size: 24px;
+      padding-top: 20px;
+    }
     &.bg-1 {
       background: url("~assets/svg/decor 1.svg") left no-repeat;
       background-size: 70px;
+      background-position-y: top;
     }
     &.bg-2 {
       background: url("~assets/svg/decor 2.svg") left no-repeat;
@@ -54,6 +59,7 @@ export default {
 /* планшетная версия - 768 - 1023 px*/
 @media (min-width: 768px) {
   .section-title {
+    font-size: 30px;
     margin-left: -20px;
     margin-bottom: 15px;
     width: 100%;
@@ -61,6 +67,7 @@ export default {
 
     &.bg-1 {
       background-size: 100px;
+      background-position-y: center;
     }
 
     &.bg-2 {
@@ -74,11 +81,13 @@ export default {
     &.bg-3 {
       background: url("~assets/svg/decor 3.svg") left no-repeat;
       background-size: 100px;
+      background-position-y: center;
     }
 
     &.bg-4 {
       background: url("~assets/svg/decor 4.svg") left no-repeat;
       background-size: 100px;
+      background-position-y: center;
     }
 
   }
@@ -87,7 +96,7 @@ export default {
 @media (min-width: 1024px) {
 
   .section-title {
-
+    font-size: 40px;
     &.bg-1 {
 
     }

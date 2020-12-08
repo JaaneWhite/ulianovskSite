@@ -1,12 +1,1 @@
-.Требования_на_выдачу_дел_в_читальном_зале {
-  font-size: 15px;
-  font-family: "Roboto";
-  color: rgb(32, 32, 32);
-  text-decoration: underline;
-  line-height: 1.6;
-  text-align: left;
-  position: absolute;
-  left: 17px;
-  top: 3451.668px;
-  z-index: 117;
-}
+

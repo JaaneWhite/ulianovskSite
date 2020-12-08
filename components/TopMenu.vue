@@ -10,7 +10,7 @@
                 <b-dropdown-item to="funds">Фонды досоветского периода</b-dropdown-item>
               </b-col>
               <b-col cols="12" xl="6" class="dd-menu-col">
-                <b-dropdown-item to="#">Фонды советского периода</b-dropdown-item>
+                <b-dropdown-item to="404">Фонды советского периода</b-dropdown-item>
               </b-col>
             </b-row>
           </b-container>
