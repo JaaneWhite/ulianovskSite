@@ -1,6 +1,6 @@
 <template>
   <b-navbar toggleable="lg" class="top-menu-block" :class="navbarClass">
-    <b-navbar-brand href="#">
+    <b-navbar-brand>
       <b-img src="~/assets/img/logo.png" class="logo-img" v-if="collapseExpanded === false" />
       <b-row class="logo-text" v-if="collapseExpanded === false">ГАУО</b-row>
       <b-row class="logo-text-expanded" v-else>Авторизуйтесь для получения услуг архива</b-row>
@@ -9,6 +9,13 @@
     <b-navbar-toggle target="nav-collapse" class="burger-button"></b-navbar-toggle>
     <b-collapse id="nav-collapse" is-nav @show="onCollapseSwitch" @hide="onCollapseSwitch" >
       <b-navbar-nav fill class="top-menu">
+        <div class="user-block">
+          <b-nav-item class="user-block-nav-item auth" to="">Вход или Регистрация</b-nav-item>
+          <b-nav-item class="user-block-nav-item cart" to="">Корзина</b-nav-item>
+          <b-nav-item class="user-block-nav-item contacts" to="contacts">Контакты</b-nav-item>
+        </div>
+
+
         <b-nav-item-dropdown href="#" class="top-menu-item" text="Путеводители">
           <b-container class="dropdown-menu-container">
             <b-row class="dd-menu-row">
@@ -174,7 +181,6 @@ export default {
         white-space: normal;
       }
     }
-
     .burger-button {
       margin-right: 0;
       border: none;
@@ -194,9 +200,50 @@ export default {
         }
       }
     }
+    .navbar-collapse {
+      .user-block {
+        display: none;
+      }
+      &.show {
+        .user-block {
+          display: flex;
+        }
+      }
+    }
+
 
     .top-menu {
       width: 100%;
+      .user-block {
+        flex-direction: column;
+        padding-left: 30px;
+        .user-block-nav-item {
+          background-repeat: no-repeat;
+          background-size: 16px;
+          background-position-y: center;
+          padding-left: 30px;
+
+          &.auth {
+            background-image: url("~assets/svg/login.svg");
+          }
+          &.cart {
+            background-image: url("~assets/svg/cart w.svg");
+          }
+          &.contacts {
+            background-image: url("~assets/svg/contacts.svg");
+          }
+
+
+          a {
+            text-align: left;
+            font-size: 14px;
+            color: white;
+            text-decoration: underline;
+
+          }
+
+        }
+      }
 
       .top-menu-item {
         border: none;
@@ -283,6 +330,9 @@ export default {
   .top-menu-block {
     justify-content: space-between;
     padding-bottom: 0;
+    .navbar-brand {
+      display: none;
+    }
 
     .top-menu {
       height: 50px;

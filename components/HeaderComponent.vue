@@ -215,13 +215,23 @@ export default {
 @media (min-width: 1024px) {
     .header-top-row {
       .logo-block {
+        display: flex;
+        .logo-img {
+          width: 109px;
+          height: 86px;
+          margin-left: 0;
+        }
       }
       .header-title-block {
         padding: 0;
         flex-direction: column;
         .title-row {
           .title-text {
-            margin-top: 15px;
+            margin-top: 30px;
+            display: flex;
+            .md {
+              display: flex;
+            }
           }
           .login-block {
             display: block;
