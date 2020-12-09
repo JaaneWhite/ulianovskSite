@@ -3,17 +3,35 @@
     <b-navbar-brand>
       <b-img src="~/assets/img/logo.png" class="logo-img" v-if="collapseExpanded === false" />
       <b-row class="logo-text" v-if="collapseExpanded === false">ГАУО</b-row>
-      <b-row class="logo-text-expanded" v-else>Авторизуйтесь для получения услуг архива</b-row>
+      <b-row class="logo-text-expanded" v-if="autorized === false">Авторизуйтесь для получения услуг архива</b-row>
     </b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse" class="burger-button"></b-navbar-toggle>
     <b-collapse id="nav-collapse" is-nav @show="onCollapseSwitch" @hide="onCollapseSwitch" >
       <b-navbar-nav fill class="top-menu">
+        <template v-if="autorized === false">
         <div class="user-block">
           <b-nav-item class="user-block-nav-item auth" to="">Вход или Регистрация</b-nav-item>
           <b-nav-item class="user-block-nav-item cart" to="">Корзина</b-nav-item>
           <b-nav-item class="user-block-nav-item contacts" to="contacts">Контакты</b-nav-item>
         </div>
+        </template>
+        <template v-else>
+          <div class="user-block">
+            <b-nav-item class="user-block-nav-item auth no-link">Здравствуйте,</b-nav-item>
+            <b-nav-item-dropdown class="user-block-nav-item userName" to="" :text="userName">
+              <b-dropdown-item to="#" class="user-menu-item">Активировать абонемент</b-dropdown-item>
+              <b-dropdown-item to="#" class="user-menu-item">Купить абонемент</b-dropdown-item>
+              <b-dropdown-item to="#" class="user-menu-item">Мои заказы</b-dropdown-item>
+              <b-dropdown-item to="#" class="user-menu-item">Мои запросы</b-dropdown-item>
+              <b-dropdown-item to="#" class="user-menu-item">Мои требования</b-dropdown-item>
+              <b-dropdown-item to="#" class="user-menu-item">Мои данные</b-dropdown-item>
+              <b-dropdown-item to="#" class="user-menu-item">Выйти</b-dropdown-item>
+            </b-nav-item-dropdown>
+            <b-nav-item class="user-block-nav-item cart" to="">Корзина</b-nav-item>
+            <b-nav-item class="user-block-nav-item contacts" to="contacts">Контакты</b-nav-item>
+          </div>
+        </template>
 
 
         <b-nav-item-dropdown href="#" class="top-menu-item" text="Путеводители">
@@ -122,6 +140,8 @@ export default {
     return {
       collapseExpanded: false,
       navbarClass: '',
+      autorized: true,
+      userName: 'Василий',
     }
   },
 
@@ -217,12 +237,12 @@ export default {
       .user-block {
         flex-direction: column;
         padding-left: 30px;
+
         .user-block-nav-item {
           background-repeat: no-repeat;
           background-size: 16px;
           background-position-y: center;
-          padding-left: 30px;
-
+          margin-right: 30px;
           &.auth {
             background-image: url("~assets/svg/login.svg");
           }
@@ -231,15 +251,72 @@ export default {
           }
           &.contacts {
             background-image: url("~assets/svg/contacts.svg");
+            background-position-y: 10px;
+            border-bottom: solid 1px #d96a6a;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
           }
+          &.no-link {
+            a {
+              text-decoration: none;
+              padding-bottom: 0;
+            }
+          }
+          &.userName {
+            a {
+              text-decoration: none;
+              border-bottom: dashed white 1px;
+              width: fit-content;
+              padding-bottom: 0;
+              padding-top: 0;
+              padding-left: 0;
+              margin-left: 30px;
+            }
+          }
+          .dropdown-toggle::after {
+            background-image: url("~assets/svg/arrow down w.svg");
+            background-size: 10px;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: none;
+            width: 15px;
+            height: 15px;
+            vertical-align: middle;
+          }
+          &.show {
+            .dropdown-toggle::after {
+              background-image: url("~assets/svg/arrow up w.svg");
+            }
 
-
+          }
           a {
             text-align: left;
             font-size: 14px;
             color: white;
             text-decoration: underline;
+            padding-left: 30px;
 
+          }
+          .dropdown-menu {
+            background-color: #a72c2c;
+            margin-left: -30px;
+            margin-right: -30px;
+            border-radius: 0;
+            border: none;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            .user-menu-item {
+              font-size: 15px;
+              margin-left: 30px;
+              padding-top: 15px;
+              padding-bottom: 15px;
+              a{
+                border: none;
+              }
+
+
+
+            }
           }
 
         }
@@ -248,29 +325,43 @@ export default {
       .top-menu-item {
         border: none;
         box-shadow: none;
+
         .nav-link {
           font-size: 15px;
-          color: #474334;
+          color: #ffffff;
           height: 100%;
           display: flex;
           align-items: center;
           text-align: left;
-          border-bottom: solid 1px #949081;
-          padding-right: 15px;
-          padding-left: 15px;
+          padding-right: 30px;
+          padding-left: 30px;
+          padding-bottom: 15px;
+          padding-top: 15px;
 
+        }
+
+        .dropdown-toggle::after {
+          background-image: url("~assets/svg/arrow down w.svg");
+          background-size: 10px;
+          background-position: center;
+          background-repeat: no-repeat;
+          border: none;
+          width: 15px;
+          height: 15px;
+          vertical-align: middle;
+          margin-left: auto;
         }
         &.show {
+          .dropdown-toggle::after {
+            background-image: url("~assets/svg/arrow up w.svg");
+          }
           .nav-link {
             color: white;
-            background-color: #9e0000;
+            background-color: #c06a6a;
             border: none;
           }
+        }
 
-        }
-        .dropdown-toggle::after {
-          display: none;
-        }
         .dropdown-menu {
           border: none;
           border-radius: 0;
@@ -282,10 +373,10 @@ export default {
           width: 100%;
           opacity: 100%;
           .dropdown-menu-container {
-            background-color: #9e0000;
+            background-color: #a72c2c;
             padding: 0;
             flex-direction: column;
-            text-align: right;
+            text-align: left;
             align-items: flex-end;
             .dd-menu-row {
               .dd-menu-col {
@@ -296,6 +387,9 @@ export default {
                   line-height: 1.733;
                   white-space: normal;
                   width: 100%;
+                  padding-left: 60px;
+                  padding-top: 15px;
+                  padding-bottom: 15px;
 
                   &:hover {
                     color: #daa3a3;
@@ -324,10 +418,63 @@ export default {
 /* планшетная версия - 768 - 1023 px*/
 @media (min-width: 768px) {
 
+
+  .navbarExpanded {
+   width: 50%;
+    z-index: 50;
+ }
+  .top-menu-block {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    .navbar-brand {
+      width: 65%;
+      .logo-img {
+        display: none;
+      }
+      .logo-text {
+        display: none;
+      }
+    }
+    .burger-button {
+      margin-left: auto;
+      margin-right: 15px;
+      margin-top: 20px;
+      width: 55px;
+      height: 55px;
+      padding: 0;
+      .navbar-toggler-icon {
+        width: 55px;
+        height: 55px;
+        background-image: url("~assets/img/menu open.png");
+        background-size: 55px;
+
+      }
+      &.not-collapsed {
+        .navbar-toggler-icon {
+          width: 55px;
+          height: 55px;
+          background-image: url("~assets/img/menu close.png");
+          background-size: 55px;
+
+        }
+      }
+    }
+    .top-menu {
+      .user-block {
+        margin-top: -20px;
+        .no-link {
+          margin-top: -20px;
+        }
+      }
+    }
+  }
 }
 /* ПК версия -  от 1024 px*/
 @media (min-width: 1024px) {
   .top-menu-block {
+    position: relative;
     justify-content: space-between;
     padding-bottom: 0;
     .navbar-brand {
@@ -341,6 +488,8 @@ export default {
         height: 100%;
         .nav-link {
           border: none;
+          background-color: white;
+          color: #474334;
 
           &:hover {
             font-size: 15px;
@@ -357,11 +506,17 @@ export default {
         .dropdown-toggle::after {
           display: none;
         }
+        &.show {
+          .nav-link {
+            background-color: #9e0000;
+          }
+        }
         .dropdown-menu {
           position: fixed;
           background-color: #9e0000;
           .dropdown-menu-container {
             text-align: left;
+            background-color: #9e0000;
             .dd-menu-row {
               width: 100%;
               margin: 30px 50px;
@@ -370,6 +525,7 @@ export default {
                 .dropdown-item {
                   padding-top: 15px;
                   padding-bottom: 15px;
+                  padding-left: 0;
 
                 }
                 .dd-menu-item-title {

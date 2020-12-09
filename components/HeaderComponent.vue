@@ -1,12 +1,12 @@
 <template>
   <header>
     <b-row >
-      <b-container>
+      <b-container class="header-container">
         <b-row class="header-top-row">
-          <b-col cols="0" md="0" xl="2" class="logo-block">
+          <b-col cols="0" md="2" xl="2" class="logo-block">
             <b-img src="~/assets/img/logo.png" class="logo-img"></b-img>
           </b-col>
-          <b-col cols="12" md="12" xl="10" class="header-title-block">
+          <b-col cols="0" md="10" xl="10" class="header-title-block">
             <b-row class="title-row">
               <b-col cols="12" md="8" xl="9" class="title-text">
                 <b-row class="md">Государственный архив Ульяновской области</b-row>
@@ -170,8 +170,13 @@ export default {
   }
 /* планшетная версия - 768 - 1023 px*/
 @media (min-width: 768px) {
+  .header-container {
+    width: 100%;
+    max-width: none;
+  }
   .header-top-row {
     .logo-block {
+      display: flex;
       .logo-img {
         margin: 30px auto;
         width: auto;
@@ -183,6 +188,7 @@ export default {
       .title-row {
         .title-text {
           padding-left: 15px;
+          display: flex;
 
           .sm {
             display:none;
@@ -207,12 +213,18 @@ export default {
           }
         }
       }
+      .menu-row {
+        width: 25%;
+      }
     }
   }
 }
 
 /* ПК версия -  от 1024 px*/
 @media (min-width: 1024px) {
+  .header-container {
+    max-width: 1140px;
+  }
     .header-top-row {
       .logo-block {
         display: flex;
@@ -252,6 +264,9 @@ export default {
               }
             }
           }
+        }
+        .menu-row {
+          width: 100%;
         }
       }
     }

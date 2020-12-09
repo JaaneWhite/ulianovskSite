@@ -1,13 +1,520 @@
-
-.Авторизуйтесь_для_получения_услуг_архива {
-  font-size: 13px;
+.ФУТЕР {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 768px;
+  height: 3925px;
+  z-index: 438;
+}
+.логотипы {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 768px;
+  height: 3925px;
+  z-index: 437;
+}
+.©_Государственное_учреждение__Государственный_а {
+  font-size: 11px;
   font-family: "Roboto";
-  color: rgba(255, 255, 255, 0.749);
-  font-style: italic;
+  color: rgb(64, 64, 64);
+  line-height: 1.818;
+  text-align: left;
+  position: absolute;
+  left: 308.328px;
+  top: 3874.091px;
+  z-index: 434;
+}
+.Layer_25 {
+  background-image: url("Layer 25.png");
+  position: absolute;
+  left: 261px;
+  top: 3855px;
+  width: 33px;
+  height: 40px;
+  z-index: 432;
+}
+.Layer_24 {
+  background-image: url("Layer 24.png");
+  position: absolute;
+  left: 216px;
+  top: 3855px;
+  width: 30px;
+  height: 40px;
+  z-index: 430;
+}
+.Layer_23 {
+  background-image: url("Layer 23.png");
+  position: absolute;
+  left: 95px;
+  top: 3855px;
+  width: 106px;
+  height: 40px;
+  z-index: 428;
+}
+.p3 {
+  background-image: url("p3.png");
+  position: absolute;
+  left: 39px;
+  top: 3855px;
+  width: 41px;
+  height: 40px;
+  z-index: 426;
+}
+.полоса {
+  background-color: rgb(50, 49, 44);
+  position: absolute;
+  left: 39px;
+  top: 3824px;
+  width: 690px;
+  height: 1px;
+  z-index: 424;
+}
+.баннеры {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 768px;
+  height: 3925px;
+  z-index: 423;
+}
+.Layer_34 {
+  background-image: url("Layer 34.png");
+  position: absolute;
+  left: 463px;
+  top: 3731px;
+  width: 123px;
+  height: 34px;
+  z-index: 422;
+}
+.Rectangle_1 {
+  background-color: rgb(50, 49, 44);
+  position: absolute;
+  left: 462px;
+  top: 3702px;
+  width: 124px;
+  height: 92px;
+  z-index: 421;
+}
+.Layer_33 {
+  background-image: url("Layer 33.png");
+  position: absolute;
+  left: 322px;
+  top: 3735px;
+  width: 123px;
+  height: 27px;
+  z-index: 420;
+}
+.Rectangle_1 {
+  background-color: rgb(50, 49, 44);
+  position: absolute;
+  left: 321px;
+  top: 3702px;
+  width: 124px;
+  height: 92px;
+  z-index: 419;
+}
+.Layer_32 {
+  background-image: url("Layer 32.png");
+  position: absolute;
+  left: 180px;
+  top: 3715px;
+  width: 124px;
+  height: 66px;
+  z-index: 418;
+}
+.Rectangle_1 {
+  background-color: rgb(50, 49, 44);
+  position: absolute;
+  left: 180px;
+  top: 3702px;
+  width: 124px;
+  height: 92px;
+  z-index: 417;
+}
+.Layer_35 {
+  background-image: url("Layer 35.png");
+  position: absolute;
+  left: 39px;
+  top: 3715px;
+  width: 123px;
+  height: 66px;
+  z-index: 416;
+}
+.Rectangle_1 {
+  background-color: rgb(50, 49, 44);
+  position: absolute;
+  left: 39px;
+  top: 3702px;
+  width: 124px;
+  height: 92px;
+  z-index: 415;
+}
+.Layer_30 {
+  background-image: url("Layer 30.png");
+  position: absolute;
+  left: 604px;
+  top: 3605px;
+  width: 123px;
+  height: 66px;
+  z-index: 414;
+}
+.Rectangle_1 {
+  background-color: rgb(50, 49, 44);
+  position: absolute;
+  left: 603px;
+  top: 3592px;
+  width: 125px;
+  height: 92px;
+  z-index: 413;
+}
+.Layer_29 {
+  background-image: url("Layer 29.png");
+  position: absolute;
+  left: 463px;
+  top: 3625px;
+  width: 123px;
+  height: 27px;
+  z-index: 412;
+}
+.Rectangle_1 {
+  background-color: rgb(50, 49, 44);
+  position: absolute;
+  left: 462px;
+  top: 3592px;
+  width: 124px;
+  height: 92px;
+  z-index: 411;
+}
+.Layer_28 {
+  background-image: url("Layer 28.png");
+  position: absolute;
+  left: 321px;
+  top: 3605px;
+  width: 124px;
+  height: 66px;
+  z-index: 410;
+}
+.Rectangle_1 {
+  background-color: rgb(50, 49, 44);
+  position: absolute;
+  left: 321px;
+  top: 3592px;
+  width: 124px;
+  height: 92px;
+  z-index: 409;
+}
+.Layer_27 {
+  background-image: url("Layer 27.png");
+  position: absolute;
+  left: 180px;
+  top: 3605px;
+  width: 123px;
+  height: 66px;
+  z-index: 408;
+}
+.Rectangle_1 {
+  background-color: rgb(50, 49, 44);
+  position: absolute;
+  left: 180px;
+  top: 3592px;
+  width: 124px;
+  height: 92px;
+  z-index: 407;
+}
+.Layer_26 {
+  background-image: url("Layer 26.png");
+  position: absolute;
+  left: 39px;
+  top: 3614px;
+  width: 123px;
+  height: 48px;
+  z-index: 406;
+}
+.Rectangle_1 {
+  background-color: rgb(50, 49, 44);
+  position: absolute;
+  left: 39px;
+  top: 3592px;
+  width: 124px;
+  height: 92px;
+  z-index: 405;
+}
+.полоса {
+  background-color: rgb(50, 49, 44);
+  position: absolute;
+  left: 39px;
+  top: 3561px;
+  width: 690px;
+  height: 1px;
+  z-index: 403;
+}
+.скролл {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 768px;
+  height: 3925px;
+  z-index: 402;
+}
+.caret {
+  border-radius: 3px;
+  background-color: rgb(158, 0, 0);
+  position: absolute;
+  left: 711px;
+  top: 3174px;
+  width: 17px;
+  height: 50px;
+  z-index: 401;
+}
+.track {
+  background-color: rgb(229, 239, 241);
+  position: absolute;
+  left: 719px;
+  top: 3175px;
+  width: 1px;
+  height: 351px;
+  z-index: 400;
+}
+.об_архиве {
+  font-size: 14px;
+  font-family: "Roboto";
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-transform: uppercase;
   line-height: 1.2;
   text-align: left;
   position: absolute;
-  left: 36.146px;
-  top: 12.595px;
-  z-index: 112;
+  left: 398.25px;
+  top: 3512.579px;
+  z-index: 398;
+}
+.услуги {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 768px;
+  height: 3925px;
+  z-index: 397;
+}
+.разделитель {
+  background-color: rgb(158, 0, 0);
+  position: absolute;
+  left: 399px;
+  top: 3344px;
+  width: 1px;
+  height: 124px;
+  z-index: 396;
+}
+.услуги_Социально_правовые_и_тематические_запрос {
+  font-size: 14px;
+  font-family: "Roboto";
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: left;
+  -moz-transform: matrix( 1,0,0,0.99753997539975,0,0);
+  -webkit-transform: matrix( 1,0,0,0.99753997539975,0,0);
+  -ms-transform: matrix( 1,0,0,0.99753997539975,0,0);
+  position: absolute;
+  left: 399.038px;
+  top: 3313.121px;
+  width: 264.33px;
+  height: 150.746px;
+  z-index: 395;
+}
+.тематические_бд {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 768px;
+  height: 3925px;
+  z-index: 393;
+}
+.разделитель {
+  background-color: rgb(158, 0, 0);
+  position: absolute;
+  left: 39px;
+  top: 3344px;
+  width: 1px;
+  height: 177px;
+  z-index: 392;
+}
+.тематические_базы_данных_Дворяне_Симбирской_губ {
+  font-size: 14px;
+  font-family: "Roboto";
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: left;
+  -moz-transform: matrix( 1,0,0,0.99753997539975,0,0);
+  -webkit-transform: matrix( 1,0,0,0.99753997539975,0,0);
+  -ms-transform: matrix( 1,0,0,0.99753997539975,0,0);
+  position: absolute;
+  left: 38.96px;
+  top: 3312.772px;
+  width: 222.518px;
+  height: 190.444px;
+  z-index: 391;
+}
+.указатели {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 768px;
+  height: 3925px;
+  z-index: 389;
+}
+.разделитель {
+  background-color: rgb(158, 0, 0);
+  position: absolute;
+  left: 399px;
+  top: 3224px;
+  width: 1px;
+  height: 42px;
+  z-index: 388;
+}
+.указатели_Именной_Географический {
+  font-size: 14px;
+  font-family: "Roboto";
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: left;
+  -moz-transform: matrix( 1,0,0,0.99753997539975,0,0);
+  -webkit-transform: matrix( 1,0,0,0.99753997539975,0,0);
+  -ms-transform: matrix( 1,0,0,0.99753997539975,0,0);
+  position: absolute;
+  left: 398.452px;
+  top: 3192.92px;
+  width: 124.502px;
+  height: 73.148px;
+  z-index: 387;
+}
+.путеводители {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 768px;
+  height: 3925px;
+  z-index: 385;
+}
+.разделитель {
+  background-color: rgb(158, 0, 0);
+  position: absolute;
+  left: 39px;
+  top: 3224px;
+  width: 1px;
+  height: 43px;
+  z-index: 384;
+}
+.путеводители_Фонды_досоветского_периода_Фонды_с {
+  font-size: 14px;
+  font-family: "Roboto";
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: left;
+  -moz-transform: matrix( 1,0,0,0.99753997539975,0,0);
+  -webkit-transform: matrix( 1,0,0,0.99753997539975,0,0);
+  -ms-transform: matrix( 1,0,0,0.99753997539975,0,0);
+  position: absolute;
+  left: 38.601px;
+  top: 3192.92px;
+  width: 210.987px;
+  height: 73.148px;
+  z-index: 383;
+}
+.разделитель {
+  background-color: rgb(53, 53, 53);
+  position: absolute;
+  left: 39px;
+  top: 3154px;
+  width: 690px;
+  height: 1px;
+  z-index: 381;
+}
+.social {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 768px;
+  height: 3925px;
+  z-index: 380;
+}
+.контакты {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 768px;
+  height: 3925px;
+  z-index: 368;
+}
+.__432017__г__Ульяновск__ул__12_Сентября__д__7а_ {
+  font-size: 14px;
+  font-family: "Roboto";
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: left;
+  -moz-transform: matrix( 1,0,0,0.99753997539975,0,0);
+  -webkit-transform: matrix( 1,0,0,0.99753997539975,0,0);
+  -ms-transform: matrix( 1,0,0,0.99753997539975,0,0);
+  position: absolute;
+  left: 396.778px;
+  top: 2924.976px;
+  width: 278.39px;
+  height: 73.288px;
+  z-index: 365;
+}
+.l1 {
+  background-image: url("l1.png");
+  position: absolute;
+  left: 69px;
+  top: 3048px;
+  width: 114px;
+  height: 2px;
+  z-index: 362;
+}
+.контакты__Приемная__тел__факс_:___7__8422__73_5 {
+  font-size: 14px;
+  font-family: "Roboto";
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: left;
+  -moz-transform: matrix( 1,0,0,0.99753997539975,0,0);
+  -webkit-transform: matrix( 1,0,0,0.99753997539975,0,0);
+  -ms-transform: matrix( 1,0,0,0.99753997539975,0,0);
+  position: absolute;
+  left: 38.494px;
+  top: 2924.983px;
+  width: 297.199px;
+  height: 120.022px;
+  z-index: 361;
+}
+.Vector_Smart_Object {
+  background-image: url("Vector Smart Object.png");
+  opacity: 0.149;
+  position: absolute;
+  left: 0px;
+  top: 3201px;
+  width: 768px;
+  height: 724px;
+  z-index: 359;
+}
+.фон {
+  background-color: rgb(43, 42, 37);
+  position: absolute;
+  left: 0px;
+  top: 2877px;
+  width: 768px;
+  height: 1048px;
+  z-index: 358;
 }
